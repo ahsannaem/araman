@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arman Computers — SaaS development, AI solutions, and custom software for startups and teams.">
+  <title>Arman Computers — SaaS &amp; AI Development</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-xl font-bold tracking-tight">
+        Arman <span class="text-violet-400">Computers</span>
+      </a>
+
+      <div class="hidden md:flex gap-8 text-sm">
+        <a href="#services" class="nav-link hover:text-violet-400">Services</a>
+        <a href="#process" class="nav-link hover:text-violet-400">Process</a>
+        <a href="#work" class="nav-link hover:text-violet-400">Work</a>
+        <a href="#about" class="nav-link hover:text-violet-400">About</a>
+        <a href="#contact" class="nav-link hover:text-violet-400">Contact</a>
+      </div>
+
+      <a href="#contact" class="hidden md:inline-block px-5 py-2 text-sm font-medium bg-violet-600 rounded-xl hover:bg-violet-500 transition">
+        Get started
+      </a>
+
+      <button id="menu-btn" type="button" class="md:hidden text-2xl text-zinc-300" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-800 bg-zinc-950 px-6 py-4 flex flex-col gap-4 text-sm">
+      <a href="#services" class="nav-link hover:text-violet-400">Services</a>
+      <a href="#process" class="nav-link hover:text-violet-400">Process</a>
+      <a href="#work" class="nav-link hover:text-violet-400">Work</a>
+      <a href="#about" class="nav-link hover:text-violet-400">About</a>
+      <a href="#contact" class="nav-link hover:text-violet-400">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-bg min-h-screen flex items-center pt-24 pb-16">
+    <div class="max-w-5xl mx-auto px-6 text-center hero-fade">
+      <p class="text-violet-400 text-sm font-medium uppercase tracking-widest mb-4">Tech development partner</p>
+      <h1 class="text-5xl md:text-7xl font-bold tracking-tighter leading-tight mb-6">
+        We build SaaS &amp; AI<br>products that <span class="text-violet-400">scale</span>
+      </h1>
+      <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10">
+        End-to-end software development — from MVP to production.
+        SaaS platforms, AI integrations, and custom web applications.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contact"
+           class="inline-block px-10 py-4 bg-white text-black font-semibold rounded-2xl hover:bg-violet-400 hover:text-white transition text-lg">
+          Discuss your project
+        </a>
+        <a href="#services"
+           class="inline-block px-10 py-4 border border-zinc-700 rounded-2xl font-semibold hover:border-violet-500 hover:text-violet-400 transition text-lg">
+          Our services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust line -->
+  <div class="border-y border-zinc-800 py-6">
+    <div class="max-w-6xl mx-auto px-6 text-center text-zinc-500 text-sm">
+      SaaS • AI • Web Apps • MVP • Cloud — Trusted by founders &amp; growing teams
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section id="services" class="py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="reveal text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">What we build</h2>
+        <p class="text-zinc-400 max-w-2xl mx-auto">
+          Full-stack development services tailored for startups and businesses ready to ship.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-8 card-hover">
+          <div class="service-icon w-14 h-14 mb-6 bg-violet-500/10 rounded-xl flex items-center justify-center text-violet-400 text-2xl">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">SaaS Development</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Multi-tenant platforms, subscriptions, admin dashboards, and APIs built to grow with your users.
+          </p>
+        </article>
+
+        <article class="reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-8 card-hover" style="transition-delay: 0.05s">
+          <div class="service-icon w-14 h-14 mb-6 bg-fuchsia-500/10 rounded-xl flex items-center justify-center text-fuchsia-400 text-2xl">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">AI Development</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            LLM integrations, RAG pipelines, chatbots, and intelligent automation for your product workflows.
+          </p>
+        </article>
+
+        <article class="reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-8 card-hover" style="transition-delay: 0.1s">
+          <div class="service-icon w-14 h-14 mb-6 bg-cyan-500/10 rounded-xl flex items-center justify-center text-cyan-400 text-2xl">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Web Applications</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Modern frontends and robust backends — responsive UIs, real-time features, and secure APIs.
+          </p>
+        </article>
+
+        <article class="reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-8 card-hover">
+          <div class="service-icon w-14 h-14 mb-6 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 text-2xl">
+            <i class="fa-solid fa-rocket"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">MVP &amp; Prototyping</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Validate ideas fast with focused builds, weekly demos, and a clear path from prototype to launch.
+          </p>
+        </article>
+
+        <article class="reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-8 card-hover" style="transition-delay: 0.05s">
+          <div class="service-icon w-14 h-14 mb-6 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-400 text-2xl">
+            <i class="fa-solid fa-server"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">DevOps &amp; Cloud</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Deployment pipelines, infrastructure setup, monitoring, and scalable hosting on major cloud providers.
+          </p>
+        </article>
+
+        <article class="reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-8 card-hover" style="transition-delay: 0.1s">
+          <div class="service-icon w-14 h-14 mb-6 bg-rose-500/10 rounded-xl flex items-center justify-center text-rose-400 text-2xl">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Technical Consulting</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Architecture reviews, stack decisions, and hands-on guidance so your team ships with confidence.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" class="py-24 bg-zinc-900">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="reveal text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">How we work</h2>
+        <p class="text-zinc-400">A clear, collaborative process from first call to handover.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="reveal text-center">
+          <div class="w-16 h-16 mx-auto mb-6 bg-violet-500/10 rounded-2xl flex items-center justify-center text-violet-400 text-2xl font-bold">1</div>
+          <h3 class="text-xl font-semibold mb-3">Discover &amp; scope</h3>
+          <p class="text-zinc-400 text-sm">We align on goals, timeline, and deliverables before writing code.</p>
+        </div>
+        <div class="reveal text-center" style="transition-delay: 0.08s">
+          <div class="w-16 h-16 mx-auto mb-6 bg-violet-500/10 rounded-2xl flex items-center justify-center text-violet-400 text-2xl font-bold">2</div>
+          <h3 class="text-xl font-semibold mb-3">Build &amp; iterate</h3>
+          <p class="text-zinc-400 text-sm">Agile sprints with regular demos so you see progress every week.</p>
+        </div>
+        <div class="reveal text-center" style="transition-delay: 0.16s">
+          <div class="w-16 h-16 mx-auto mb-6 bg-violet-500/10 rounded-2xl flex items-center justify-center text-violet-400 text-2xl font-bold">3</div>
+          <h3 class="text-xl font-semibold mb-3">Ship &amp; support</h3>
+          <p class="text-zinc-400 text-sm">Production launch, documentation, and full codebase ownership for you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section id="work" class="py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="reveal mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Selected work</h2>
+        <p class="text-zinc-400">Examples of the kinds of products we deliver.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <article class="reveal bg-zinc-900 rounded-3xl overflow-hidden card-hover border border-zinc-800">
+          <div class="h-64 bg-gradient-to-br from-violet-600 to-fuchsia-700 flex items-center justify-center">
+            <i class="fa-solid fa-robot text-6xl text-white/90"></i>
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-semibold mb-2">AI Support Platform</h3>
+            <p class="text-zinc-400 mb-4 text-sm">RAG-powered customer assistant integrated into an existing SaaS product.</p>
+            <span class="text-xs uppercase tracking-widest text-violet-400">SaaS • AI</span>
+          </div>
+        </article>
+
+        <article class="reveal bg-zinc-900 rounded-3xl overflow-hidden card-hover border border-zinc-800" style="transition-delay: 0.08s">
+          <div class="h-64 bg-gradient-to-br from-cyan-600 to-blue-700 flex items-center justify-center">
+            <i class="fa-solid fa-chart-line text-6xl text-white/90"></i>
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-semibold mb-2">Analytics Dashboard</h3>
+            <p class="text-zinc-400 mb-4 text-sm">Real-time metrics and reporting for a B2B operations team.</p>
+            <span class="text-xs uppercase tracking-widest text-cyan-400">Web App • Data</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-24 bg-zinc-900">
+    <div class="max-w-4xl mx-auto px-6 text-center reveal">
+      <h2 class="text-4xl md:text-5xl font-bold mb-8">About Arman Computers</h2>
+      <p class="text-lg text-zinc-400 leading-relaxed mb-6">
+        We are a technology partner focused on building reliable, modern software for businesses
+        that need to move fast without sacrificing quality.
+      </p>
+      <p class="text-zinc-500 leading-relaxed">
+        From greenfield MVPs to AI-enhanced platforms, we combine solid engineering,
+        thoughtful UX, and transparent communication so you always know where your project stands.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-24">
+    <div class="max-w-2xl mx-auto px-6 text-center reveal">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Let's build your next product</h2>
+      <p class="text-zinc-400 mb-10">
+        Tell us about your SaaS idea, AI use case, or internal tool — we'll get back to you within one business day.
+      </p>
+
+      <a href="mailto:contact@armancomputers.com"
+         class="inline-flex items-center gap-2 px-12 py-5 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-3xl text-lg font-medium hover:scale-105 transition">
+        contact@armancomputers.com
+        <i class="fa-solid fa-arrow-right text-sm"></i>
+      </a>
+    </div>
+  </section>
+
+  <footer class="py-12 text-center text-zinc-500 border-t border-zinc-800 text-sm">
+    <p>&copy; 2026 Arman Computers. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
