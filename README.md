@@ -25,7 +25,10 @@ Update the contact email in `index.html` when you have a real address.
 ## Structure
 
 ```
-index.html      — landing page
-css/style.css   — custom styles & animations
-js/main.js      — scroll reveal & mobile menu
+index.html       — home (hero, about, contact)
+services.html    — services
+process.html     — how we work
+assets/logo.svg  — site logo & favicon
+css/style.css    — custom styles & animations
+js/main.js       — scroll reveal & mobile menu
 ```

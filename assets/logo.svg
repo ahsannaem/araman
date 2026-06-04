@@ -1,0 +1,21 @@
+<svg viewBox="0 0 541 605" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arman Computers">
+  <polygon
+    points="270.5,2 539,152 539,453 270.5,603 2,453 2,152"
+    stroke="#4C84C4"
+    stroke-width="3"
+    fill="none"
+  />
+  <line x1="270.5" y1="2" x2="270.5" y2="82" stroke="#62C4EB" stroke-width="4"/>
+  <line x1="2" y1="152" x2="70" y2="200" stroke="#62C4EB" stroke-width="4"/>
+  <line x1="2" y1="453" x2="70" y2="433" stroke="#62C4EB" stroke-width="4"/>
+  <line x1="539" y1="152" x2="471" y2="200" stroke="#62C4EB" stroke-width="4"/>
+  <line x1="539" y1="453" x2="471" y2="433" stroke="#62C4EB" stroke-width="4"/>
+  <line x1="270.5" y1="603" x2="270.5" y2="523" stroke="#62C4EB" stroke-width="4"/>
+  <circle cx="70" cy="200" r="11" fill="#62C4EB"/>
+  <circle cx="70" cy="433" r="11" fill="#62C4EB"/>
+  <circle cx="471" cy="200" r="11" fill="#62C4EB"/>
+  <circle cx="471" cy="433" r="11" fill="#62C4EB"/>
+  <polygon points="270.5,80 425,174 270.5,268 116,174" fill="#37476A"/>
+  <polygon points="116,223 270.5,317 270.5,523 116,454" fill="#315B97"/>
+  <polygon points="270.5,317 425,223 425,454 270.5,523" fill="#8090B8"/>
+</svg>
