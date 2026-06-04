@@ -70,6 +70,14 @@ html {
   color: #a78bfa;
 }
 
+/* Hide chevron visually on the current page's Services item (no dropdown affordance),
+   but keep visibility:hidden so it still occupies layout space. This ensures the
+   nav bar looks *pixel identical* (no width/gap shift) when switching pages. */
+.nav-dropdown .nav-link.active .fa-chevron-down,
+#mobile-services-btn.active .fa-chevron-down {
+  visibility: hidden;
+}
+
 .nav-dropdown {
   position: relative;
 }
@@ -100,12 +108,20 @@ html {
   height: 0.5rem;
 }
 
-.nav-dropdown:hover .nav-dropdown-menu,
-.nav-dropdown:focus-within .nav-dropdown-menu {
+/* Only show dropdown on hover/focus when it's NOT the current page */
+.nav-dropdown:not(.current):hover .nav-dropdown-menu,
+.nav-dropdown:not(.current):focus-within .nav-dropdown-menu {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
+}
+
+/* Explicitly keep hidden when on the services page */
+.nav-dropdown.current .nav-dropdown-menu {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 .nav-dropdown-item {
@@ -146,4 +162,9 @@ html {
 
 .nav-services-sub.open {
   display: flex;
+}
+
+/* Force closed when on the services page (current) */
+.nav-services-sub.current {
+  display: none !important;
 }
