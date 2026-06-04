@@ -25,4 +25,13 @@
       link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
     });
   }
+
+  const mobileServicesBtn = document.getElementById('mobile-services-btn');
+  const mobileServicesSub = document.getElementById('mobile-services-sub');
+
+  if (mobileServicesBtn && mobileServicesSub) {
+    mobileServicesBtn.addEventListener('click', () => {
+      mobileServicesSub.classList.toggle('open');
+    });
+  }
 })();
