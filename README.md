@@ -27,7 +27,7 @@ Update the contact email in `index.html` when you have a real address.
 ```
 index.html       — home (hero, about, contact)
 services.html    — services
-process.html     — how we work
+courses.html     — courses
 assets/logo.svg  — site logo & favicon
 css/style.css    — custom styles & animations
 js/main.js       — scroll reveal & mobile menu
