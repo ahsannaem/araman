@@ -20,7 +20,7 @@ Then visit [http://localhost:8080](http://localhost:8080).
 4. Choose branch `main` (or `master`) and folder **/ (root)**.
 5. Save — your site will be live at `https://<username>.github.io/<repo>/`.
 
-Update the contact email in `index.html` when you have a real address.
+Contact email: iarmancomputers@gmail.com (set in the #contact section of `index.html`).
 
 ## Structure
 
