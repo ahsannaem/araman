@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Graphic Design Mastery: From Zero to Professional. Learn Adobe, Figma, Canva &amp; Pro Techniques – Build Stunning Designs in Weeks.">
+  <title>Graphic Design Mastery | Arman Computers</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+
+  <!-- Exact same nav structure as other pages for design consistency -->
+  <nav class="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3 text-xl font-bold tracking-tight">
+        <img src="assets/logo.svg" alt="" class="h-9 w-auto shrink-0" width="32" height="36">
+        <span>Arman <span class="text-violet-400">Computers</span></span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <div class="nav-dropdown">
+          <a href="services.html" class="nav-link hover:text-violet-400 inline-flex items-center gap-1.5">
+            Services
+            <i class="fa-solid fa-chevron-down text-[10px] opacity-60"></i>
+          </a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="services.html#saas" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-cloud text-violet-400"></i> SaaS Development</a>
+            <a href="services.html#ai" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-robot text-fuchsia-400"></i> AI Development</a>
+            <a href="services.html#web" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-code text-cyan-400"></i> Web Applications</a>
+            <a href="services.html#mvp" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-rocket text-emerald-400"></i> MVP &amp; Prototyping</a>
+            <a href="services.html#devops" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-server text-amber-400"></i> DevOps &amp; Cloud</a>
+            <a href="services.html#consulting" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-lightbulb text-rose-400"></i> Consulting</a>
+            <a href="services.html" class="nav-dropdown-item nav-dropdown-all" role="menuitem">View all services</a>
+          </div>
+        </div>
+        <a href="process.html" class="nav-link hover:text-violet-400">Process</a>
+        <a href="courses.html" class="nav-link active hover:text-violet-400">Courses</a>
+        <a href="index.html#about" class="nav-link hover:text-violet-400">About</a>
+        <a href="index.html#contact" class="nav-link hover:text-violet-400">Contact</a>
+      </div>
+
+      <a href="index.html#contact" class="hidden md:inline-block px-5 py-2 text-sm font-medium bg-violet-600 rounded-xl hover:bg-violet-500 transition">
+        Get started
+      </a>
+
+      <button id="menu-btn" type="button" class="md:hidden text-2xl text-zinc-300" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-800 bg-zinc-950 px-6 py-4 flex flex-col gap-4 text-sm">
+      <div>
+        <button type="button" id="mobile-services-btn" class="nav-link hover:text-violet-400 flex items-center gap-2 w-full text-left">
+          Services
+          <i class="fa-solid fa-chevron-down text-[10px] opacity-60"></i>
+        </button>
+        <div id="mobile-services-sub" class="nav-services-sub">
+          <a href="services.html#saas" class="text-zinc-400 hover:text-violet-400">SaaS Development</a>
+          <a href="services.html#ai" class="text-zinc-400 hover:text-violet-400">AI Development</a>
+          <a href="services.html#web" class="text-zinc-400 hover:text-violet-400">Web Applications</a>
+          <a href="services.html#mvp" class="text-zinc-400 hover:text-violet-400">MVP &amp; Prototyping</a>
+          <a href="services.html#devops" class="text-zinc-400 hover:text-violet-400">DevOps &amp; Cloud</a>
+          <a href="services.html#consulting" class="text-zinc-400 hover:text-violet-400">Consulting</a>
+          <a href="services.html" class="text-violet-400">View all services</a>
+        </div>
+      </div>
+      <a href="process.html" class="nav-link hover:text-violet-400">Process</a>
+      <a href="courses.html" class="nav-link active hover:text-violet-400">Courses</a>
+      <a href="index.html#about" class="nav-link hover:text-violet-400">About</a>
+      <a href="index.html#contact" class="nav-link hover:text-violet-400">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Page header matching site style -->
+  <header class="page-header max-w-6xl mx-auto px-6 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Graphic Design Mastery</h1>
+    <p class="text-zinc-400 max-w-2xl mx-auto">
+      From Zero to Professional. Learn Adobe, Figma, Canva &amp; Pro Techniques.
+    </p>
+  </header>
+
+  <!-- Hero visual using site asset -->
+  <section class="pb-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="relative rounded-2xl overflow-hidden border border-zinc-800">
+        <img src="assets/graphic-design.png" alt="Graphic Design Mastery course preview – student work and techniques" class="w-full h-[420px] md:h-[520px] object-cover">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black/80"></div>
+        <div class="absolute inset-0 flex items-center">
+          <div class="max-w-2xl px-6 md:px-12">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest mb-4 border border-white/20">
+              SELF-PACED • ONLINE
+            </div>
+            <h2 class="text-white text-4xl md:text-6xl font-bold tracking-tighter mb-4">Master Graphic Design<br>From Zero to Professional</h2>
+            <p class="text-lg text-zinc-200 max-w-md mb-6">Build stunning designs in weeks with Adobe, Figma, Canva &amp; professional techniques.</p>
+            
+            <div class="flex flex-wrap gap-3">
+              <button onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})" 
+                      class="px-8 py-3 bg-violet-600 hover:bg-violet-500 rounded-2xl font-semibold text-lg transition">
+                Enroll Now – $497
+              </button>
+              <button onclick="document.getElementById('curriculum').scrollIntoView({behavior:'smooth'})" 
+                      class="px-8 py-3 border border-white/70 hover:bg-white/10 rounded-2xl font-semibold text-lg transition">
+                View curriculum
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section – using site card patterns -->
+  <section class="pb-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">What you'll achieve</h2>
+        <p class="text-zinc-400 max-w-md mx-auto">Practical creative skills. No business fluff. Pure design craft.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-7 card-hover">
+          <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-palette"></i></div>
+          <h3 class="font-semibold text-xl mb-2">Design with confidence</h3>
+          <p class="text-sm text-zinc-400">From complete beginner to creating polished, professional work you can be proud of.</p>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-7 card-hover">
+          <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-tools"></i></div>
+          <h3 class="font-semibold text-xl mb-2">Master the full toolkit</h3>
+          <p class="text-sm text-zinc-400">Photoshop, Illustrator, InDesign, Figma, Canva, and After Effects used in real studios.</p>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-7 card-hover">
+          <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-folder-open"></i></div>
+          <h3 class="font-semibold text-xl mb-2">15+ portfolio projects</h3>
+          <p class="text-sm text-zinc-400">Build a strong body of work across digital, print, branding, and motion.</p>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-7 card-hover">
+          <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-eye"></i></div>
+          <h3 class="font-semibold text-xl mb-2">See like a professional</h3>
+          <p class="text-sm text-zinc-400">Deep mastery of typography, color, composition, hierarchy, and visual storytelling.</p>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-7 card-hover">
+          <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-magic"></i></div>
+          <h3 class="font-semibold text-xl mb-2">Work across every medium</h3>
+          <p class="text-sm text-zinc-400">UI designs, posters, brand systems, editorial layouts, social, and motion graphics.</p>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-7 card-hover">
+          <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-rocket"></i></div>
+          <h3 class="font-semibold text-xl mb-2">Pro workflows &amp; speed</h3>
+          <p class="text-sm text-zinc-400">Learn efficient techniques and shortcuts used by working designers every day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curriculum Preview -->
+  <section id="curriculum" class="pb-16 bg-zinc-900">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="mb-8">
+        <h2 class="text-3xl md:text-4xl font-bold mb-2">Curriculum</h2>
+        <p class="text-zinc-400">7 focused modules. Pure creative skills.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+          <div class="font-mono text-xs text-violet-400 mb-1">01</div>
+          <div class="font-semibold mb-1">Design Foundations</div>
+          <div class="text-sm text-zinc-400">Principles, typography, color, composition, grids.</div>
+        </div>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+          <div class="font-mono text-xs text-violet-400 mb-1">02</div>
+          <div class="font-semibold mb-1">Photoshop Mastery</div>
+          <div class="text-sm text-zinc-400">Retouching, compositing, mockups, advanced effects.</div>
+        </div>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+          <div class="font-mono text-xs text-violet-400 mb-1">03</div>
+          <div class="font-semibold mb-1">Illustrator – Vector Design</div>
+          <div class="text-sm text-zinc-400">Logos, icons, illustrations, scalable systems.</div>
+        </div>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+          <div class="font-mono text-xs text-violet-400 mb-1">04</div>
+          <div class="font-semibold mb-1">Figma for Modern Design</div>
+          <div class="text-sm text-zinc-400">UI/UX, components, prototyping, design systems.</div>
+        </div>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+          <div class="font-mono text-xs text-violet-400 mb-1">05</div>
+          <div class="font-semibold mb-1">Canva Pro Techniques</div>
+          <div class="text-sm text-zinc-400">Fast, high-quality output for marketing and social.</div>
+        </div>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+          <div class="font-mono text-xs text-violet-400 mb-1">06</div>
+          <div class="font-semibold mb-1">InDesign &amp; Layout</div>
+          <div class="text-sm text-zinc-400">Editorial, multi-page, print production.</div>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <button onclick="document.getElementById('full-curriculum').classList.toggle('hidden'); this.innerText = this.innerText.includes('View') ? 'Hide full curriculum' : 'View full curriculum + lessons';"
+                class="text-violet-400 hover:text-violet-300 text-sm font-medium flex items-center gap-2">
+          View full curriculum + lessons <i class="fa-solid fa-chevron-down"></i>
+        </button>
+      </div>
+
+      <div id="full-curriculum" class="hidden mt-4 bg-zinc-950 border border-zinc-800 rounded-2xl p-6 text-sm text-zinc-400">
+        <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
+          <div><strong>Module 07 – Motion &amp; Portfolio:</strong> After Effects basics, micro-animations, case study presentation, and building a professional portfolio site.</div>
+          <div>All modules include project files, reference examples, and practical assignments you can add to your portfolio immediately.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section class="pb-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Tools You'll Master</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-center">
+          <i class="fa-brands fa-adobe text-3xl text-red-400 mb-3"></i>
+          <div class="font-medium">Photoshop</div>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-center">
+          <i class="fa-brands fa-adobe text-3xl text-orange-400 mb-3"></i>
+          <div class="font-medium">Illustrator</div>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-center">
+          <i class="fa-brands fa-adobe text-3xl text-indigo-400 mb-3"></i>
+          <div class="font-medium">InDesign</div>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-center">
+          <div class="text-3xl font-bold mb-1">F</div>
+          <div class="font-medium">Figma</div>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-center">
+          <div class="text-3xl font-bold mb-1">C</div>
+          <div class="font-medium">Canva Pro</div>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-center">
+          <i class="fa-brands fa-adobe text-3xl text-sky-400 mb-3"></i>
+          <div class="font-medium">After Effects</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Student Showcase -->
+  <section class="pb-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Student Work</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden card-hover">
+          <img src="assets/graphic-design.png" alt="Example of professional graphic design work created in the course" class="w-full h-48 object-cover">
+          <div class="p-5">
+            <div class="font-medium">Brand Identity System</div>
+            <div class="text-sm text-zinc-400">Logo, stationery, packaging guidelines</div>
+          </div>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden card-hover">
+          <img src="assets/generated/figma-ui.jpg" alt="Modern Figma UI design example from student projects" class="w-full h-48 object-cover">
+          <div class="p-5">
+            <div class="font-medium">Figma Dashboard UI</div>
+            <div class="text-sm text-zinc-400">Full design system + prototype</div>
+          </div>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden card-hover">
+          <img src="assets/generated/brand-identity.jpg" alt="Luxury brand identity mockups created during the course" class="w-full h-48 object-cover">
+          <div class="p-5">
+            <div class="font-medium">Editorial &amp; Print Layout</div>
+            <div class="text-sm text-zinc-400">Magazine spread and multi-page project</div>
+          </div>
+        </div>
+      </div>
+      <p class="text-center text-xs text-zinc-500 mt-6">Real projects students complete and add to their portfolios.</p>
+    </div>
+  </section>
+
+  <!-- Testimonials – simple cards matching site -->
+  <section class="pb-16 bg-zinc-900">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">What students say</h2>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+          <p class="text-sm text-zinc-300">"I had zero design experience. After this course I redesigned our entire marketing materials. The practical projects made all the difference."</p>
+          <div class="mt-5 text-sm font-medium">— Maya K., Marketing Designer</div>
+        </div>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+          <p class="text-sm text-zinc-300">"The Figma and Illustrator sections alone were worth it. I now have a portfolio that actually gets responses from studios."</p>
+          <div class="mt-5 text-sm font-medium">— Jamal R., Junior Designer</div>
+        </div>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+          <p class="text-sm text-zinc-300">"Finally a course focused purely on craft and skill. My work improved immediately. Highly recommended."</p>
+          <div class="mt-5 text-sm font-medium">— Sofia L., Freelance Designer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing & Offer -->
+  <section id="pricing" class="pb-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl md:text-4xl font-bold mb-2">Pricing</h2>
+        <p class="text-zinc-400">One-time payment. Lifetime access. 30-day guarantee.</p>
+      </div>
+
+      <div class="max-w-md mx-auto bg-zinc-900 border border-zinc-800 rounded-2xl p-8">
+        <div class="text-center">
+          <div class="text-sm text-zinc-400 mb-1">Full course access</div>
+          <div class="text-5xl font-bold tracking-tighter mb-1">$497</div>
+          <div class="text-xs text-zinc-500 mb-6">or 3 payments of $197</div>
+
+          <div class="space-y-3 mb-6 text-left text-sm">
+            <div class="flex gap-2"><span class="text-violet-400">✓</span> All 7 modules + project files</div>
+            <div class="flex gap-2"><span class="text-violet-400">✓</span> Bonus templates &amp; resources</div>
+            <div class="flex gap-2"><span class="text-violet-400">✓</span> Lifetime updates</div>
+            <div class="flex gap-2"><span class="text-violet-400">✓</span> 30-day money-back guarantee</div>
+          </div>
+
+          <button onclick="showEnrollModal()" 
+                  class="w-full py-4 bg-violet-600 hover:bg-violet-500 rounded-2xl font-semibold text-lg transition mb-3">
+            Enroll Now
+          </button>
+          <div class="text-xs text-zinc-500">30-day 100% money-back guarantee</div>
+        </div>
+      </div>
+
+      <div class="text-center mt-6 text-xs text-zinc-500">
+        Payment plans available at checkout. Questions? <a href="index.html#contact" class="text-violet-400 hover:underline">Contact us</a>.
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ matching site style -->
+  <section class="pb-16">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">FAQ</h2>
+      <div class="space-y-3">
+        <details class="bg-zinc-900 border border-zinc-800 rounded-2xl px-6 py-4">
+          <summary class="font-medium cursor-pointer">Do I need previous experience?</summary>
+          <p class="mt-3 text-sm text-zinc-400">No. The course starts from zero and is designed for complete beginners who want professional-level results.</p>
+        </details>
+        <details class="bg-zinc-900 border border-zinc-800 rounded-2xl px-6 py-4">
+          <summary class="font-medium cursor-pointer">How long does it take?</summary>
+          <p class="mt-3 text-sm text-zinc-400">Most students finish the core content in 6–10 weeks (5–8 hrs/week). You have lifetime access and can go at your own pace.</p>
+        </details>
+        <details class="bg-zinc-900 border border-zinc-800 rounded-2xl px-6 py-4">
+          <summary class="font-medium cursor-pointer">Is this about freelancing or business?</summary>
+          <p class="mt-3 text-sm text-zinc-400">No. Pure creative design skills and craft only. No client work or business content.</p>
+        </details>
+        <details class="bg-zinc-900 border border-zinc-800 rounded-2xl px-6 py-4">
+          <summary class="font-medium cursor-pointer">What software do I need?</summary>
+          <p class="mt-3 text-sm text-zinc-400">A computer and the ability to run the tools (free trials available for most). Canva Pro techniques are included.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA matching site buttons -->
+  <section class="pb-24">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to start?</h2>
+      <p class="text-zinc-400 mb-8">Join students building professional design skills right now.</p>
+      <button onclick="showEnrollModal()" 
+              class="px-10 py-4 bg-violet-600 hover:bg-violet-500 rounded-2xl font-semibold text-lg transition">
+        Enroll Now – $497
+      </button>
+      <div class="text-xs text-zinc-500 mt-4">30-day money-back guarantee • Lifetime access</div>
+    </div>
+  </section>
+
+  <footer class="py-12 text-center text-zinc-500 border-t border-zinc-800 text-sm">
+    <p>&copy; 2026 Arman Computers</p>
+  </footer>
+
+  <!-- Simple enroll modal (consistent with site) -->
+  <div id="enroll-modal" onclick="if (event.target.id === 'enroll-modal') hideEnrollModal()" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-6">
+    <div onclick="event.stopImmediatePropagation()" class="bg-zinc-900 border border-zinc-800 rounded-2xl max-w-md w-full p-8">
+      <div class="flex justify-between mb-6">
+        <div>
+          <div class="font-bold text-xl">Enroll in Graphic Design Mastery</div>
+          <div class="text-sm text-zinc-400">$497 one-time or 3× $197</div>
+        </div>
+        <button onclick="hideEnrollModal()" class="text-2xl leading-none text-zinc-400">×</button>
+      </div>
+
+      <div class="space-y-3 mb-6">
+        <button onclick="selectPayment('full')" class="w-full py-3 border border-violet-500 bg-violet-600/10 rounded-xl font-medium">Pay $497 (full)</button>
+        <button onclick="selectPayment('plan')" class="w-full py-3 border border-zinc-700 hover:bg-zinc-800 rounded-xl font-medium">3 payments of $197</button>
+      </div>
+
+      <div id="payment-details" class="hidden text-sm mb-6"></div>
+
+      <button id="confirm-btn" onclick="completeEnrollment()" class="hidden w-full py-3 bg-violet-600 hover:bg-violet-500 rounded-2xl font-semibold">
+        Complete Enrollment (Demo)
+      </button>
+
+      <p class="text-center text-xs text-zinc-500 mt-4">This is a demo. In production this would connect to Stripe.</p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Sales page specific interactions (kept minimal, no style overrides)
+    function showEnrollModal() {
+      document.getElementById('enroll-modal').classList.remove('hidden');
+      document.getElementById('enroll-modal').classList.add('flex');
+      document.getElementById('payment-details').classList.add('hidden');
+      document.getElementById('confirm-btn').classList.add('hidden');
+    }
+
+    function hideEnrollModal() {
+      const modal = document.getElementById('enroll-modal');
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+    }
+
+    function selectPayment(type) {
+      const details = document.getElementById('payment-details');
+      const btn = document.getElementById('confirm-btn');
+      
+      if (type === 'full') {
+        details.innerHTML = '<strong>One-time payment:</strong> $497. Includes all modules, bonuses, and lifetime access.';
+        details.classList.remove('hidden');
+      } else {
+        details.innerHTML = '<strong>Payment plan:</strong> $197 today, then two more payments of $197. Full access immediately.';
+        details.classList.remove('hidden');
+      }
+      btn.classList.remove('hidden');
+      btn.dataset.type = type;
+    }
+
+    function completeEnrollment() {
+      const btn = document.getElementById('confirm-btn');
+      btn.innerHTML = 'Success! Check your email for access.';
+      btn.disabled = true;
+      
+      setTimeout(() => {
+        hideEnrollModal();
+        alert('Thank you! In a real setup you would be redirected to the student dashboard or Stripe confirmation.');
+        btn.innerHTML = 'Complete Enrollment (Demo)';
+        btn.disabled = false;
+        document.getElementById('payment-details').classList.add('hidden');
+        btn.classList.add('hidden');
+      }, 1400);
+    }
+
+    // Make sure mobile menu works (reuses main.js but we also have fallback)
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
