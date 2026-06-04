@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Arman Computers. Discuss your SaaS, AI, or custom software project. Fast responses and clear communication.">
+  <title>Contact | Arman Computers</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+
+  <nav class="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3 text-xl font-bold tracking-tight">
+        <img src="assets/logo.svg" alt="" class="h-9 w-auto shrink-0" width="32" height="36">
+        <span>Arman <span class="text-violet-400">Computers</span></span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <div class="nav-dropdown">
+          <a href="services.html" class="nav-link hover:text-violet-400 inline-flex items-center gap-1.5">
+            Services
+            <i class="fa-solid fa-chevron-down text-[10px] opacity-60"></i>
+          </a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="services.html#saas" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-cloud text-violet-400"></i> SaaS Development</a>
+            <a href="services.html#ai" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-robot text-fuchsia-400"></i> AI Development</a>
+            <a href="services.html#web" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-code text-cyan-400"></i> Web Applications</a>
+            <a href="services.html#mvp" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-rocket text-emerald-400"></i> MVP &amp; Prototyping</a>
+            <a href="services.html#devops" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-server text-amber-400"></i> DevOps &amp; Cloud</a>
+            <a href="services.html#consulting" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-lightbulb text-rose-400"></i> Consulting</a>
+            <a href="services.html" class="nav-dropdown-item nav-dropdown-all" role="menuitem">View all services</a>
+          </div>
+        </div>
+        <a href="courses.html" class="nav-link hover:text-violet-400">Courses</a>
+        <a href="index.html#about" class="nav-link hover:text-violet-400">About</a>
+        <a href="contact.html" class="nav-link active hover:text-violet-400">Contact</a>
+      </div>
+
+      <a href="services.html" class="hidden md:inline-block px-5 py-2 text-sm font-medium bg-violet-600 rounded-xl hover:bg-violet-500 transition">
+        Explore services
+      </a>
+
+      <button id="menu-btn" type="button" class="md:hidden text-2xl text-zinc-300" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-800 bg-zinc-950 px-6 py-4 flex flex-col gap-4 text-sm">
+      <div>
+        <button type="button" id="mobile-services-btn" class="nav-link hover:text-violet-400 flex items-center gap-2 w-full text-left">
+          Services
+          <i class="fa-solid fa-chevron-down text-[10px] opacity-60"></i>
+        </button>
+        <div id="mobile-services-sub" class="nav-services-sub">
+          <a href="services.html#saas" class="text-zinc-400 hover:text-violet-400">SaaS Development</a>
+          <a href="services.html#ai" class="text-zinc-400 hover:text-violet-400">AI Development</a>
+          <a href="services.html#web" class="text-zinc-400 hover:text-violet-400">Web Applications</a>
+          <a href="services.html#mvp" class="text-zinc-400 hover:text-violet-400">MVP &amp; Prototyping</a>
+          <a href="services.html#devops" class="text-zinc-400 hover:text-violet-400">DevOps &amp; Cloud</a>
+          <a href="services.html#consulting" class="text-zinc-400 hover:text-violet-400">Consulting</a>
+          <a href="services.html" class="text-violet-400">View all services</a>
+        </div>
+      </div>
+      <a href="courses.html" class="nav-link hover:text-violet-400">Courses</a>
+      <a href="index.html#about" class="nav-link hover:text-violet-400">About</a>
+      <a href="contact.html" class="nav-link active hover:text-violet-400">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="pt-24 pb-16 border-b border-zinc-800">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-medium tracking-widest text-violet-400 mb-6">
+        <i class="fa-solid fa-comments"></i>
+        <span>WE'RE READY TO TALK</span>
+      </div>
+      <h1 class="text-5xl md:text-6xl font-bold tracking-tighter leading-none mb-6">
+        Let's Build the<br>Future Together
+      </h1>
+      <p class="text-xl md:text-2xl text-zinc-400 max-w-2xl mx-auto mb-10">
+        Connect with our team. Whether you're launching an MVP, adding AI capabilities, or scaling your SaaS — we're here to help you ship with confidence.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#consultation-form"
+           class="inline-flex items-center justify-center gap-3 px-10 py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-3xl text-lg font-semibold hover:scale-[1.02] transition-all shadow-lg hover:shadow-xl">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Request a Consultation</span>
+        </a>
+        <a href="https://wa.me/923006991759?text=Hi%20Arman%20Computers%2C%20I%27d%20like%20to%20schedule%20a%20strategy%20call."
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-3 px-10 py-4 border border-zinc-700 hover:border-zinc-500 rounded-3xl text-lg font-semibold transition-all hover:bg-zinc-900">
+          <i class="fa-brands fa-whatsapp text-xl"></i>
+          <span>Schedule a Call</span>
+        </a>
+      </div>
+      <p class="mt-6 text-xs text-zinc-500">Fast responses • Direct access to builders • No sales fluff</p>
+    </div>
+  </div>
+
+  <!-- Main Contact Area -->
+  <div class="max-w-6xl mx-auto px-6 py-16">
+    <div class="grid lg:grid-cols-5 gap-8 lg:gap-10">
+      
+      <!-- Form -->
+      <div class="lg:col-span-3" id="consultation-form">
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 md:p-10">
+          <div class="mb-8">
+            <h2 class="text-3xl font-semibold tracking-tight">Request a Consultation</h2>
+            <p class="text-zinc-400 mt-2">Tell us about your project. We'll get back to you within one business day.</p>
+          </div>
+
+          <form id="contact-form" class="space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-xs font-medium text-zinc-400 mb-1.5 tracking-widest">FIRST NAME <span class="text-violet-400">*</span></label>
+                <input type="text" name="firstName" required class="w-full bg-zinc-950 border border-zinc-800 focus:border-violet-500 focus:ring-1 focus:ring-violet-500/30 rounded-2xl px-4 py-3 text-sm placeholder-zinc-500 transition" placeholder="Alex">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-zinc-400 mb-1.5 tracking-widest">LAST NAME <span class="text-violet-400">*</span></label>
+                <input type="text" name="lastName" required class="w-full bg-zinc-950 border border-zinc-800 focus:border-violet-500 focus:ring-1 focus:ring-violet-500/30 rounded-2xl px-4 py-3 text-sm placeholder-zinc-500 transition" placeholder="Rivera">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-xs font-medium text-zinc-400 mb-1.5 tracking-widest">JOB TITLE <span class="text-violet-400">*</span></label>
+                <input type="text" name="jobTitle" required class="w-full bg-zinc-950 border border-zinc-800 focus:border-violet-500 focus:ring-1 focus:ring-violet-500/30 rounded-2xl px-4 py-3 text-sm placeholder-zinc-500 transition" placeholder="Founder / CTO / Product Lead">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-zinc-400 mb-1.5 tracking-widest">COMPANY NAME <span class="text-violet-400">*</span></label>
+                <input type="text" name="company" required class="w-full bg-zinc-950 border border-zinc-800 focus:border-violet-500 focus:ring-1 focus:ring-violet-500/30 rounded-2xl px-4 py-3 text-sm placeholder-zinc-500 transition" placeholder="Your Company">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-xs font-medium text-zinc-400 mb-1.5 tracking-widest">COMPANY EMAIL <span class="text-violet-400">*</span></label>
+                <input type="email" name="email" required class="w-full bg-zinc-950 border border-zinc-800 focus:border-violet-500 focus:ring-1 focus:ring-violet-500/30 rounded-2xl px-4 py-3 text-sm placeholder-zinc-500 transition" placeholder="you@company.com">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-zinc-400 mb-1.5 tracking-widest">PHONE NUMBER</label>
+                <input type="tel" name="phone" class="w-full bg-zinc-950 border border-zinc-800 focus:border-violet-500 focus:ring-1 focus:ring-violet-500/30 rounded-2xl px-4 py-3 text-sm placeholder-zinc-500 transition" placeholder="+92 300 0000000 (optional)">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-xs font-medium text-zinc-400 mb-1.5 tracking-widest">COMPANY SIZE <span class="text-violet-400">*</span></label>
+                <select name="companySize" required class="w-full bg-zinc-950 border border-zinc-800 focus:border-violet-500 focus:ring-1 focus:ring-violet-500/30 rounded-2xl px-4 py-3 text-sm text-zinc-100 transition">
+                  <option value="">Select size</option>
+                  <option value="1-10">1–10 employees</option>
+                  <option value="11-50">11–50 employees</option>
+                  <option value="51-200">51–200 employees</option>
+                  <option value="200+">200+ employees</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-zinc-400 mb-1.5 tracking-widest">INDUSTRY <span class="text-violet-400">*</span></label>
+                <select name="industry" required class="w-full bg-zinc-950 border border-zinc-800 focus:border-violet-500 focus:ring-1 focus:ring-violet-500/30 rounded-2xl px-4 py-3 text-sm text-zinc-100 transition">
+                  <option value="">Select industry</option>
+                  <option value="SaaS / Software">SaaS / Software</option>
+                  <option value="Artificial Intelligence">Artificial Intelligence</option>
+                  <option value="E-commerce & Retail">E-commerce & Retail</option>
+                  <option value="Fintech">Fintech</option>
+                  <option value="Healthcare">Healthcare</option>
+                  <option value="Education & EdTech">Education & EdTech</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-medium text-zinc-400 mb-2 tracking-widest">WHAT ARE YOU LOOKING TO ACHIEVE? (SELECT ALL THAT APPLY)</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                <label class="flex items-center gap-3 px-4 py-3 bg-zinc-950 border border-zinc-800 hover:border-zinc-700 rounded-2xl cursor-pointer has-[:checked]:border-violet-500 has-[:checked]:bg-zinc-900/70 transition">
+                  <input type="checkbox" name="goals[]" value="SaaS Product Development" class="sr-only peer">
+                  <span class="w-[18px] h-[18px] flex-shrink-0 flex items-center justify-center border border-zinc-700 bg-zinc-950 rounded peer-checked:bg-violet-600 peer-checked:border-violet-600 transition">
+                    <i class="fa-solid fa-check text-white text-[9px] hidden peer-checked:block"></i>
+                  </span>
+                  <span>SaaS Product Development</span>
+                </label>
+                <label class="flex items-center gap-3 px-4 py-3 bg-zinc-950 border border-zinc-800 hover:border-zinc-700 rounded-2xl cursor-pointer has-[:checked]:border-violet-500 has-[:checked]:bg-zinc-900/70 transition">
+                  <input type="checkbox" name="goals[]" value="AI Features & Integration" class="sr-only peer">
+                  <span class="w-[18px] h-[18px] flex-shrink-0 flex items-center justify-center border border-zinc-700 bg-zinc-950 rounded peer-checked:bg-violet-600 peer-checked:border-violet-600 transition">
+                    <i class="fa-solid fa-check text-white text-[9px] hidden peer-checked:block"></i>
+                  </span>
+                  <span>AI Features & Integration</span>
+                </label>
+                <label class="flex items-center gap-3 px-4 py-3 bg-zinc-950 border border-zinc-800 hover:border-zinc-700 rounded-2xl cursor-pointer has-[:checked]:border-violet-500 has-[:checked]:bg-zinc-900/70 transition">
+                  <input type="checkbox" name="goals[]" value="MVP or Prototype" class="sr-only peer">
+                  <span class="w-[18px] h-[18px] flex-shrink-0 flex items-center justify-center border border-zinc-700 bg-zinc-950 rounded peer-checked:bg-violet-600 peer-checked:border-violet-600 transition">
+                    <i class="fa-solid fa-check text-white text-[9px] hidden peer-checked:block"></i>
+                  </span>
+                  <span>MVP or Prototype</span>
+                </label>
+                <label class="flex items-center gap-3 px-4 py-3 bg-zinc-950 border border-zinc-800 hover:border-zinc-700 rounded-2xl cursor-pointer has-[:checked]:border-violet-500 has-[:checked]:bg-zinc-900/70 transition">
+                  <input type="checkbox" name="goals[]" value="Custom Web Application" class="sr-only peer">
+                  <span class="w-[18px] h-[18px] flex-shrink-0 flex items-center justify-center border border-zinc-700 bg-zinc-950 rounded peer-checked:bg-violet-600 peer-checked:border-violet-600 transition">
+                    <i class="fa-solid fa-check text-white text-[9px] hidden peer-checked:block"></i>
+                  </span>
+                  <span>Custom Web Application</span>
+                </label>
+                <label class="flex items-center gap-3 px-4 py-3 bg-zinc-950 border border-zinc-800 hover:border-zinc-700 rounded-2xl cursor-pointer has-[:checked]:border-violet-500 has-[:checked]:bg-zinc-900/70 transition">
+                  <input type="checkbox" name="goals[]" value="DevOps & Cloud Scaling" class="sr-only peer">
+                  <span class="w-[18px] h-[18px] flex-shrink-0 flex items-center justify-center border border-zinc-700 bg-zinc-950 rounded peer-checked:bg-violet-600 peer-checked:border-violet-600 transition">
+                    <i class="fa-solid fa-check text-white text-[9px] hidden peer-checked:block"></i>
+                  </span>
+                  <span>DevOps & Cloud Scaling</span>
+                </label>
+                <label class="flex items-center gap-3 px-4 py-3 bg-zinc-950 border border-zinc-800 hover:border-zinc-700 rounded-2xl cursor-pointer has-[:checked]:border-violet-500 has-[:checked]:bg-zinc-900/70 transition">
+                  <input type="checkbox" name="goals[]" value="Technical Consulting" class="sr-only peer">
+                  <span class="w-[18px] h-[18px] flex-shrink-0 flex items-center justify-center border border-zinc-700 bg-zinc-950 rounded peer-checked:bg-violet-600 peer-checked:border-violet-600 transition">
+                    <i class="fa-solid fa-check text-white text-[9px] hidden peer-checked:block"></i>
+                  </span>
+                  <span>Technical Consulting</span>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-medium text-zinc-400 mb-1.5 tracking-widest">PROJECT DETAILS OR QUESTIONS <span class="text-violet-400">*</span></label>
+              <textarea name="message" rows="5" required class="w-full bg-zinc-950 border border-zinc-800 focus:border-violet-500 focus:ring-1 focus:ring-violet-500/30 rounded-2xl px-4 py-3 text-sm placeholder-zinc-500 transition resize-y" placeholder="Tell us about your goals, timeline, tech stack, or any specific challenges you're facing..."></textarea>
+            </div>
+
+            <button type="submit"
+                    class="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-3xl text-lg font-semibold hover:scale-[1.01] active:scale-[0.985] transition-all shadow-lg hover:shadow-xl mt-2">
+              Send Message to the Team
+              <i class="fa-solid fa-arrow-right text-sm"></i>
+            </button>
+
+            <p class="text-[10px] text-center text-zinc-500">This will open your email client with your details pre-filled. You can also reach us directly on WhatsApp for faster response.</p>
+          </form>
+
+          <!-- Success State (hidden by default) -->
+          <div id="success-message" class="hidden text-center py-8">
+            <div class="mx-auto w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center mb-5">
+              <i class="fa-solid fa-check text-emerald-400 text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-semibold mb-2">Thank you! We've received your inquiry.</h3>
+            <p class="text-zinc-400 mb-6 max-w-sm mx-auto">We'll get back to you within one business day. In the meantime, feel free to message us on WhatsApp for anything urgent.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+              <a href="https://wa.me/923006991759?text=Hi%20Arman%20Computers%2C%20I%27d%20like%20to%20follow%20up%20on%20my%20inquiry." 
+                 target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#128C7E] rounded-2xl text-sm font-semibold transition">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>Message us on WhatsApp</span>
+              </a>
+              <a href="index.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 border border-zinc-700 hover:border-zinc-500 rounded-2xl text-sm font-semibold transition">
+                Back to homepage
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Info Sidebar -->
+      <div class="lg:col-span-2 space-y-6">
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+          <h3 class="font-semibold text-xl mb-6 tracking-tight">Get In Touch</h3>
+          
+          <div class="space-y-6 text-sm">
+            <div>
+              <div class="uppercase tracking-widest text-xs text-zinc-500 mb-1">EMAIL</div>
+              <a href="mailto:iarmancomputers@gmail.com" class="text-lg hover:text-violet-400 transition block">iarmancomputers@gmail.com</a>
+            </div>
+            
+            <div>
+              <div class="uppercase tracking-widest text-xs text-zinc-500 mb-1">WHATSAPP / DIRECT LINE</div>
+              <a href="https://wa.me/923006991759?text=Hi%20Arman%20Computers%2C%20I%27d%20like%20to%20schedule%20a%20strategy%20call." 
+                 target="_blank" rel="noopener noreferrer"
+                 class="text-lg hover:text-violet-400 transition block">0300 6991759</a>
+            </div>
+
+            <div>
+              <div class="uppercase tracking-widest text-xs text-zinc-500 mb-1">RESPONSE TIME</div>
+              <p class="text-zinc-300">We typically respond within <span class="font-medium text-white">one business day</span>.</p>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-zinc-800 space-y-3">
+            <a href="mailto:iarmancomputers@gmail.com"
+               class="flex items-center justify-center gap-3 w-full px-6 py-3 border border-zinc-700 hover:border-zinc-500 rounded-2xl text-sm font-semibold transition">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Email Us Directly</span>
+            </a>
+            
+            <a href="https://wa.me/923006991759?text=Hi%20Arman%20Computers%2C%20I%27d%20like%20to%20schedule%20a%20strategy%20call."
+               target="_blank" rel="noopener noreferrer"
+               class="flex items-center justify-center gap-3 w-full px-6 py-3 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-2xl text-sm font-semibold transition shadow">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+
+          <div class="mt-6 text-[10px] leading-relaxed text-zinc-500 border border-zinc-800 bg-zinc-950/60 rounded-2xl p-3">
+            All inquiries are handled with strict confidentiality. We routinely sign NDAs for enterprise and sensitive projects.
+          </div>
+        </div>
+
+        <!-- Quick facts -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 text-sm">
+          <div class="uppercase tracking-[2px] text-xs text-violet-400 font-medium mb-3">WHAT TO EXPECT</div>
+          <div class="space-y-2.5 text-zinc-300">
+            <div class="flex items-start gap-3"><i class="fa-solid fa-check text-violet-400 mt-1 text-sm"></i> <span>We review your details within hours</span></div>
+            <div class="flex items-start gap-3"><i class="fa-solid fa-check text-violet-400 mt-1 text-sm"></i> <span>Reply with questions or availability</span></div>
+            <div class="flex items-start gap-3"><i class="fa-solid fa-check text-violet-400 mt-1 text-sm"></i> <span>Schedule a focused strategy call</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Offices / Location -->
+  <div class="border-t border-zinc-800 bg-zinc-900/30">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-semibold tracking-tight">Our Offices</h2>
+        <p class="text-zinc-400 mt-2">Main head office in Burewala with a regional office in Fujairah.</p>
+      </div>
+
+      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+        <!-- Main Head Office - text only -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+          <div class="uppercase tracking-widest text-xs text-violet-400 mb-2">MAIN HEAD OFFICE</div>
+          <div class="font-semibold text-lg leading-tight">Office No. 57, Al Yaqeen Trade Center</div>
+          <div class="text-zinc-400 mt-1">Burewala, Pakistan</div>
+
+          <div class="mt-6 text-xs text-zinc-500">
+            Our primary office for strategy, client meetings, and core operations.
+          </div>
+        </div>
+
+        <!-- Second office with map -->
+        <div>
+          <div class="uppercase tracking-widest text-xs text-violet-400 mb-2">REGIONAL OFFICE</div>
+          <div class="font-semibold text-lg leading-tight mb-1">Al Baha Dibba Road Fujhirha E89</div>
+          <div class="text-zinc-400 text-sm mb-4">Fujairah, United Arab Emirates</div>
+
+          <div class="rounded-3xl overflow-hidden border border-zinc-800 shadow-xl">
+            <iframe 
+              width="100%" 
+              height="280" 
+              style="border:0; display:block;" 
+              src="https://www.google.com/maps?q=Al+Baha+Dibba+Road+Fujairah+E89&output=embed" 
+              allowfullscreen 
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <div class="mt-3">
+            <a href="https://www.google.com/maps/search/?api=1&query=Al+Baha+Dibba+Road+Fujhirha+E89" 
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 text-sm text-violet-400 hover:text-violet-300 transition font-medium">
+              Get Directions <i class="fa-solid fa-external-link-alt text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-5xl mx-auto mt-6 text-center text-xs text-zinc-500">
+        Remote-first team. Happy to meet in person at either office or virtually.
+      </div>
+    </div>
+  </div>
+
+  <footer class="py-12 text-center text-zinc-500 border-t border-zinc-800 text-sm">
+    <div class="flex flex-col items-center gap-4">
+      <div class="flex items-center gap-6">
+        <a href="https://www.facebook.com/armancomputersandprinters/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-zinc-400 hover:text-violet-400 transition">
+          <i class="fa-brands fa-facebook-f text-xl"></i>
+        </a>
+        <a href="https://www.instagram.com/iarmancomputers/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-zinc-400 hover:text-violet-400 transition">
+          <i class="fa-brands fa-instagram text-xl"></i>
+        </a>
+        <a href="https://x.com/iarmancomputers" target="_blank" rel="noopener noreferrer" aria-label="X" class="text-zinc-400 hover:text-violet-400 transition">
+          <i class="fa-brands fa-x-twitter text-xl"></i>
+        </a>
+      </div>
+      <p>&copy; 2026 Arman Computers</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp floating button -->
+  <a href="https://wa.me/923006991759?text=Hi%20Arman%20Computers%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" class="fixed bottom-6 right-6 z-[60] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition hover:scale-110 hover:bg-[#128C7E]">
+    <i class="fa-brands fa-whatsapp text-3xl"></i>
+  </a>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Contact form handler - opens email client with prefilled details (perfect for static site)
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('success-message');
+
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const fd = new FormData(form);
+        const first = fd.get('firstName') || '';
+        const last = fd.get('lastName') || '';
+        const job = fd.get('jobTitle') || '';
+        const company = fd.get('company') || '';
+        const email = fd.get('email') || '';
+        const phone = fd.get('phone') || 'Not provided';
+        const size = fd.get('companySize') || '';
+        const industry = fd.get('industry') || '';
+        const goals = fd.getAll('goals[]').join(', ') || 'Not specified';
+        const message = fd.get('message') || '';
+
+        const subject = encodeURIComponent(`New Project Inquiry — ${company || 'New Lead'}`);
+        let body = `New inquiry from the website\n\n`;
+        body += `Name: ${first} ${last}\n`;
+        body += `Job Title: ${job}\n`;
+        body += `Company: ${company}\n`;
+        body += `Email: ${email}\n`;
+        body += `Phone: ${phone}\n`;
+        body += `Company Size: ${size}\n`;
+        body += `Industry: ${industry}\n\n`;
+        body += `Interested in: ${goals}\n\n`;
+        body += `Project Details:\n${message}\n\n`;
+        body += `—\nSent from Arman Computers contact page`;
+
+        const mailto = `mailto:iarmancomputers@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
+        
+        // Open email client
+        window.location.href = mailto;
+
+        // Show success UI
+        form.style.display = 'none';
+        success.classList.remove('hidden');
+      });
+    }
+
+    // Optional: smooth scroll for "Request a Consultation" anchor
+    document.querySelectorAll('a[href="#consultation-form"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const target = document.getElementById('consultation-form');
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
