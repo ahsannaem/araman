@@ -545,7 +545,7 @@
           document.getElementById('committee').value = committee;
           document.getElementById('constructed').value = constructed;
           document.getElementById('area').value = area;
-          calc();
+          calc(false);
         }
       } else {
         // Update initial text
@@ -595,7 +595,46 @@
       }
     }
 
-    function calc() {
+    function smoothScrollToResults(duration = 900) {
+      // Only on mobile (where form and results stack vertically)
+      if (window.innerWidth >= 1024) return;
+
+      const out = document.getElementById('out');
+      if (!out) return;
+
+      const target = out.closest('.premium-card') || out;
+      const startY = window.scrollY || window.pageYOffset;
+      const targetY = target.getBoundingClientRect().top + startY - 40; // small offset for breathing room
+      const distance = targetY - startY;
+
+      if (Math.abs(distance) < 30) return; // already in view
+
+      let startTime = null;
+
+      function easeInOutCubic(t) {
+        return t < 0.5
+          ? 4 * t * t * t
+          : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+
+      function animate(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        const easedProgress = easeInOutCubic(progress);
+        window.scrollTo(0, startY + distance * easedProgress);
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animate);
+        } else {
+          // ensure we land exactly
+          window.scrollTo(0, targetY);
+        }
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    function calc(autoScrollOnMobile = true) {
       let value = Number(document.getElementById('value').value || 0);
       let seller = document.getElementById('seller').value;
       let buyer = document.getElementById('buyer').value;
@@ -698,6 +737,14 @@
         const b = document.getElementById(id);
         if (b) b.disabled = false;
       });
+
+      // On mobile: smoothly & slowly scroll down to reveal the results card.
+      // This gives nice animated UX after the user taps "Calculate".
+      if (autoScrollOnMobile && typeof smoothScrollToResults === 'function') {
+        setTimeout(() => {
+          smoothScrollToResults(950); // ~0.95s slow, pleasant scroll (noticeable but not sluggish)
+        }, 90); // tiny delay so new content has painted
+      }
     }
 
     // Optional: Calculate on Enter key in inputs
