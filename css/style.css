@@ -84,6 +84,32 @@ button:active, a:active {
   border-color: rgb(167 139 250 / 0.2);
 }
 
+/* Disable all card animations/hovers on specific pages (e.g. tax-calculator) */
+.premium-card.no-animate,
+.premium-card.no-animate:hover {
+  transform: none !important;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4) !important;
+  border-color: rgb(39 39 42) !important;
+  transition: none !important;
+}
+
+/* RTL support for Urdu on tax-calculator page only */
+#content-wrapper[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+#content-wrapper[dir="rtl"] input,
+#content-wrapper[dir="rtl"] select,
+#content-wrapper[dir="rtl"] .tax-row {
+  direction: ltr;
+  text-align: left;
+}
+
+#content-wrapper[dir="rtl"] .tax-row {
+  flex-direction: row-reverse;
+}
+
 /* Apple-like compact nav on scroll */
 nav.nav-compact {
   padding-top: 0.5rem;
@@ -96,6 +122,10 @@ nav.nav-compact .h-9 {
 /* Extra Apple polish: smooth mobile menu */
 #mobile-menu {
   transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+#mobile-menu.mobile-open {
+  display: flex !important;
 }
 
 .nav-link {

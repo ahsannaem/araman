@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arman Computers' free Tax Calculator for Punjab, Pakistan. Estimate all property transfer taxes including Stamp Duty, FBR CVT, Baldia, and seller obligations.">
+  <title>Tax Calculator | Arman Computers — Punjab, Pakistan</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Additional styles for calculator to match site */
+    .calc-input {
+      background-color: #18181b;
+      border: 1px solid #3f3f46;
+      color: #f4f4f5;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .calc-input:focus {
+      border-color: #a78bfa;
+      box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.1);
+      outline: none;
+    }
+    .calc-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #d4d4d8;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .result-box {
+      background: #18181b;
+      border: 1px solid #3f3f46;
+    }
+    .tax-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #27272a;
+    }
+    .tax-row:last-child {
+      border-bottom: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding-top: 12px;
+    }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+
+  <!-- Consistent Nav -->
+  <nav class="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 z-50 relative">
+    <div class="max-w-[1280px] mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3 text-xl font-bold tracking-tight">
+        <img src="assets/logo.svg" alt="" class="h-9 w-auto shrink-0" width="32" height="36">
+        <span>Arman <span class="text-violet-400">Computers</span></span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <div class="nav-dropdown">
+          <a href="services.html" class="nav-link hover:text-violet-400 inline-flex items-center gap-1.5">
+            Services
+            <i class="fa-solid fa-chevron-down text-[10px] opacity-60"></i>
+          </a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="services.html#saas" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-cloud text-violet-400"></i> SaaS Development</a>
+            <a href="services.html#ai" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-robot text-fuchsia-400"></i> AI Development</a>
+            <a href="services.html#web" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-code text-cyan-400"></i> Web Applications</a>
+            <a href="services.html#mvp" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-rocket text-emerald-400"></i> MVP &amp; Prototyping</a>
+            <a href="services.html#devops" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-server text-amber-400"></i> DevOps &amp; Cloud</a>
+            <a href="services.html#consulting" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-lightbulb text-rose-400"></i> Consulting</a>
+            <a href="services.html" class="nav-dropdown-item nav-dropdown-all" role="menuitem">View all services</a>
+          </div>
+        </div>
+        <a href="index.html#solutions" class="nav-link hover:text-violet-400">Solutions</a>
+        <a href="courses.html" class="nav-link hover:text-violet-400">Courses</a>
+        <a href="index.html#about" class="nav-link hover:text-violet-400">About</a>
+        <a href="contact.html" class="nav-link hover:text-violet-400">Contact</a>
+      </div>
+
+      <a href="contact.html" class="hidden md:inline-block px-5 py-2 text-sm font-medium bg-violet-600 rounded-xl hover:bg-violet-500 transition">
+        Book a Consultation
+      </a>
+
+      <button id="menu-btn" type="button" class="md:hidden text-2xl text-zinc-300" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 border-t border-zinc-800 bg-zinc-950 px-6 py-4 flex flex-col gap-4 text-sm z-50 shadow-xl">
+      <div>
+        <button type="button" id="mobile-services-btn" class="nav-link hover:text-violet-400 flex items-center gap-2 w-full text-left">
+          Services
+          <i class="fa-solid fa-chevron-down text-[10px] opacity-60"></i>
+        </button>
+        <div id="mobile-services-sub" class="nav-services-sub">
+          <a href="services.html#saas" class="text-zinc-400 hover:text-violet-400">SaaS Development</a>
+          <a href="services.html#ai" class="text-zinc-400 hover:text-violet-400">AI Development</a>
+          <a href="services.html#web" class="text-zinc-400 hover:text-violet-400">Web Applications</a>
+          <a href="services.html#mvp" class="text-zinc-400 hover:text-violet-400">MVP &amp; Prototyping</a>
+          <a href="services.html#devops" class="text-zinc-400 hover:text-violet-400">DevOps &amp; Cloud</a>
+          <a href="services.html#consulting" class="text-zinc-400 hover:text-violet-400">Consulting</a>
+          <a href="services.html" class="text-violet-400">View all services</a>
+        </div>
+      </div>
+      <a href="index.html#solutions" class="nav-link hover:text-violet-400">Solutions</a>
+      <a href="courses.html" class="nav-link hover:text-violet-400">Courses</a>
+      <a href="index.html#about" class="nav-link hover:text-violet-400">About</a>
+      <a href="contact.html" class="nav-link hover:text-violet-400">Contact</a>
+    </div>
+  </nav>
+
+  <div id="content-wrapper" dir="rtl" lang="ur">
+  <!-- Page Header -->
+  <header class="page-header max-w-[1280px] mx-auto px-6 text-center">
+    <div class="text-violet-400 text-xs tracking-[3px] font-medium mb-3">OUR PRODUCT • PUNJAB, PAKISTAN</div>
+    <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-3">Tax Calculator</h1>
+    <p class="text-xl text-zinc-300 max-w-2xl mx-auto">
+      Free, accurate tool by Arman Computers to estimate all taxes when transferring property in Punjab.
+    </p>
+  </header>
+
+  <!-- Language Toggle: always appears on the right side of the content / cards.
+       Sticky so it stays visible (doesn't scroll away), aligned to the right of the centered
+       content area (the "card" column), not a global viewport-fixed pill detached from layout. -->
+  <div class="max-w-[1280px] mx-auto px-6 mb-4">
+    <div class="sticky top-[72px] z-40 text-right">
+      <div id="lang-toggle" dir="ltr" class="inline-flex rounded-full border border-zinc-600 bg-zinc-950 text-sm overflow-hidden shadow-2xl">
+        <button onclick="setLanguage('ur')" id="lang-ur" class="px-4 py-1.5 font-medium bg-violet-600 text-white hover:text-zinc-100 transition-colors">اردو</button>
+        <button onclick="setLanguage('en')" id="lang-en" class="px-4 py-1.5 font-medium hover:bg-zinc-800 text-zinc-200 hover:text-zinc-100 transition-colors">English</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Important Notice / Explanation -->
+  <section class="max-w-[1280px] mx-auto px-6 pb-8">
+    <div id="explanation" class="premium-card no-animate bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-info-circle text-violet-400"></i>
+        پنجاب ٹیکس کیلکولیٹر
+      </h2>
+      <p class="text-zinc-300 mb-4">
+        یہ آرمان کمپیوٹرز کا اپنا مفت ٹیکس کیلکولیٹر ہے — پنجاب، پاکستان میں جائیداد کی منتقلی کے لیے ایک مفت ٹول جو ہم نے بنایا ہے۔ یہ موجودہ ایف بی آر اور پنجاب ریونیو اتھارٹی کے سلیب کی بنیاد پر ٹیکس اور فیس کا درست تخمینہ لگاتا ہے۔
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 text-sm">
+        <div>
+          <h3 class="font-semibold text-violet-400 mb-2">خریدار ادا کرتا ہے</h3>
+          <ul class="space-y-1 text-zinc-400">
+            <li><strong>سٹامپ ڈیوٹی:</strong> جائیداد کی قیمت کا 1%</li>
+            <li><strong>بلدیہ / مقامی میونسپل ٹیکس:</strong> جائیداد کی قیمت کا 1%</li>
+            <li><strong>ایف بی آر کیپیٹل ویلیو ٹیکس (سی وی ٹی):</strong> 
+              <br>• فائلر: <strong>1.5%</strong>
+              <br>• لیٹ فائلر: <strong>4.5%</strong>
+              <br>• نان فائلر: <strong>10.5%</strong>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-violet-400 mb-2">بیچنے والا ادا کرتا ہے (ایف بی آر سی وی ٹی)</h3>
+          <ul class="space-y-1 text-zinc-400">
+            <li><strong>اندرون (شہری) علاقے:</strong> 
+              <br>• فائلر: 4.5% • لیٹ فائلر: 7.5% • نان فائلر: 12.5%
+            </li>
+            <li><strong>بیرون (دیہی) علاقے:</strong> 
+              <br>• فائلر یا لیٹ فائلر: 4.5% • نان فائلر: 11.5%
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 pt-6 border-t border-zinc-800 text-sm">
+        <p class="text-zinc-400">
+          <strong>تعمیر شدہ جائیدادوں کے لیے:</strong><br>
+          اگر جائیداد "تعمیر شدہ" ہے تو کورڈ ایریا کے فی مربع فٹ 800 روپے کا اضافی تعمیراتی ویلیو شامل کیا جاتا ہے۔
+        </p>
+        <p class="mt-3 text-xs text-zinc-400">
+          <strong>ڈس کلیمر:</strong> یہ صرف تخمینہ ہے۔ اصل رقم جائیداد کی آفیشل ڈی سی ریٹ، درست مقام، موجودہ سرکاری نوٹیفیکیشنز، اور رجسٹرنگ اتھارٹی کے اندازے پر منحصر ہے۔ ہمیشہ مقامی رجسٹرار، وکیل یا تحصیل آفس سے تصدیق کریں۔
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator -->
+  <section class="max-w-[1280px] mx-auto px-6 pb-16">
+    <div class="grid lg:grid-cols-5 gap-8">
+      
+      <!-- Form -->
+      <div class="lg:col-span-3">
+        <div class="premium-card no-animate bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+          <h2 class="text-xl font-semibold mb-6" data-lang-key="formTitle" data-en="Enter Property Details">اپنی جائیداد کی تفصیلات درج کریں</h2>
+
+          <div class="space-y-5">
+            <div>
+              <label class="calc-label" data-lang-key="valueLabel" data-en="Property Value (Rs)">جائیداد کی قیمت (روپے)</label>
+              <input id="value" type="number" class="calc-input w-full rounded-2xl px-4 py-3 text-base" placeholder="e.g. 5000000" value="5000000">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label class="calc-label" data-lang-key="sellerLabel" data-en="Seller Status">بیچنے والے کی حیثیت</label>
+                <select id="seller" class="calc-input w-full rounded-2xl px-4 py-3 text-base">
+                  <option value="Filer">فائلر</option>
+                  <option value="Late Filer">لیٹ فائلر</option>
+                  <option value="Non Filer">نان فائلر</option>
+                </select>
+              </div>
+              <div>
+                <label class="calc-label" data-lang-key="buyerLabel" data-en="Purchaser Status">خریدنے والے کی حیثیت</label>
+                <select id="buyer" class="calc-input w-full rounded-2xl px-4 py-3 text-base">
+                  <option value="Filer">فائلر</option>
+                  <option value="Late Filer">لیٹ فائلر</option>
+                  <option value="Non Filer">نان فائلر</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label class="calc-label" data-lang-key="committeeLabel" data-en="Committee / Area Type">کمیٹی / علاقے کی قسم</label>
+                <select id="committee" class="calc-input w-full rounded-2xl px-4 py-3 text-base">
+                  <option value="Androon">اندرون (شہری)</option>
+                  <option value="Beron">بیرون (دیہی)</option>
+                </select>
+                <p class="text-[10px] text-zinc-400 mt-1" data-lang-key="committeeHint" data-en="Affects seller FBR rate">بیچنے والے کے ایف بی آر ریٹ پر اثر ڈالتا ہے</p>
+              </div>
+              <div>
+                <label class="calc-label" data-lang-key="constructedLabel" data-en="Is the Property Constructed?">کیا جائیداد تعمیر شدہ ہے؟</label>
+                <select id="constructed" class="calc-input w-full rounded-2xl px-4 py-3 text-base">
+                  <option value="No">نہیں (خالی پلاٹ)</option>
+                  <option value="Yes">ہاں (تعمیر شدہ)</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="calc-label" data-lang-key="areaLabel" data-en="Covered Area (sq ft) — only if constructed">کورڈ ایریا (مربع فٹ) — صرف اگر تعمیر شدہ ہو</label>
+              <input id="area" type="number" class="calc-input w-full rounded-2xl px-4 py-3 text-base" value="0" placeholder="e.g. 1200">
+              <p class="text-[10px] text-zinc-400 mt-1" data-lang-key="areaHint" data-en="Used to calculate construction value @ Rs. 800 per sq ft">تعمیراتی قیمت کا حساب لگانے کے لیے @ Rs. 800 فی مربع فٹ</p>
+            </div>
+          </div>
+
+          <button onclick="calc()" 
+                  class="mt-8 w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-3xl text-lg font-semibold hover:scale-[1.01] transition-all shadow-lg">
+            <span data-lang-key="calcButton" data-en="Calculate Total Taxes">کل ٹیکس کا حساب لگائیں</span>
+            <i class="fa-solid fa-calculator"></i>
+          </button>
+
+          <p class="mt-4 text-center text-xs text-zinc-400">
+            All figures are estimates. Final amounts determined by the registering authority.
+          </p>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="lg:col-span-2">
+        <div class="premium-card no-animate bg-zinc-900 border border-zinc-800 rounded-3xl p-8 sticky top-24">
+          <div class="flex items-start justify-between mb-3">
+            <h3 class="font-semibold text-lg" data-lang-key="resultsTitle" data-en="Calculation Results">حساب کے نتائج</h3>
+            <div class="inline-flex items-center rounded-full border border-zinc-700 bg-zinc-900/60 p-0.5 -mt-0.5 -mr-1">
+              <button id="btn-print-results" type="button" onclick="printResults()" disabled class="p-1 rounded-xl text-zinc-500 hover:text-white hover:bg-zinc-800 transition disabled:opacity-50 disabled:cursor-not-allowed" title="پرنٹ کریں" aria-label="Print results">
+                <i class="fa-solid fa-print text-sm w-3.5"></i>
+              </button>
+              <button id="btn-download-image" type="button" onclick="downloadResultsAsImage()" disabled class="p-1 rounded-xl text-zinc-500 hover:text-white hover:bg-zinc-800 transition disabled:opacity-50 disabled:cursor-not-allowed" title="PNG تصویر ڈاؤن لوڈ کریں" aria-label="Download results as image">
+                <i class="fa-solid fa-download text-sm w-3.5"></i>
+              </button>
+              <button id="btn-share-results" type="button" onclick="shareResults()" disabled class="p-1 rounded-xl text-zinc-500 hover:text-white hover:bg-zinc-800 transition disabled:opacity-50 disabled:cursor-not-allowed" title="نتائج شیئر کریں" aria-label="Share results">
+                <i class="fa-solid fa-share-alt text-sm w-3.5"></i>
+              </button>
+            </div>
+          </div>
+          
+          <div id="out" class="result-box rounded-2xl p-6 text-sm min-h-[220px]">
+            <div class="text-zinc-300 text-center pt-8" data-lang-key="initialResult">
+              اوپر جائیداد کی تفصیلات درج کریں اور <strong>حساب لگائیں</strong> پر کلک کریں تاکہ مکمل بریک ڈاؤن دیکھ سکیں۔
+            </div>
+          </div>
+
+          <div class="mt-6 text-[10px] leading-relaxed text-zinc-400" data-lang-key="whoPays">
+            <strong>کون کیا ادا کرتا ہے:</strong><br>
+            • خریدار سٹامپ ڈیوٹی + بلدیہ + اپنا ایف بی آر سی وی ٹی ادا کرتا ہے<br>
+            • بیچنے والا اپنا ایف بی آر سی وی ٹی ادا کرتا ہے<br>
+            • تعمیراتی قیمت (اگر قابل اطلاق ہو) کل میں شامل کی جاتی ہے۔
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  </div>
+
+  <footer class="border-t border-zinc-800 pt-14 pb-10 text-sm">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-y-10">
+        <div class="col-span-2 md:col-span-1">
+          <a href="index.html" class="flex items-center gap-2 font-semibold text-lg">
+            <img src="assets/logo.svg" alt="" class="h-7 w-auto"> Arman Computers
+          </a>
+          <p class="mt-3 text-xs text-zinc-500">Building software that actually ships.</p>
+        </div>
+
+        <div>
+          <div class="font-medium text-xs tracking-widest text-zinc-500 mb-3">COMPANY</div>
+          <div class="space-y-[6px] text-zinc-400">
+            <a href="index.html#about" class="block hover:text-white">About</a>
+            <a href="contact.html" class="block hover:text-white">Contact</a>
+            <a href="services.html" class="block hover:text-white">Services</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="font-medium text-xs tracking-widest text-zinc-500 mb-3">TOOLS</div>
+          <div class="space-y-[6px] text-zinc-400">
+            <a href="tax-calculator.html" class="block hover:text-white">Tax Calculator</a>
+            <a href="courses.html" class="block hover:text-white">Courses</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="font-medium text-xs tracking-widest text-zinc-500 mb-3">CONNECT</div>
+          <div class="space-y-[6px] text-zinc-400">
+            <a href="https://x.com/iarmancomputers" target="_blank" class="block hover:text-white">X</a>
+            <a href="https://www.instagram.com/iarmancomputers/" target="_blank" class="block hover:text-white">Instagram</a>
+            <a href="https://www.facebook.com/armancomputersandprinters/" target="_blank" class="block hover:text-white">Facebook</a>
+          </div>
+        </div>
+
+        <div class="md:text-right col-span-2 md:col-span-1">
+          <div class="text-xs text-zinc-500">© 2026 Arman Computers</div>
+          <div class="mt-1 text-xs text-zinc-500">Lahore &amp; Fujairah</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp floating button -->
+  <a href="https://wa.me/923006991759?text=Hi%20Arman%20Computers%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" class="fixed bottom-6 right-6 z-[60] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition hover:scale-110 hover:bg-[#128C7E]">
+    <i class="fa-brands fa-whatsapp text-3xl"></i>
+  </a>
+
+  <script src="js/main.js"></script>
+  <script>
+    let currentLang = 'ur';
+
+    const translations = {
+      ur: {
+        purchaserTaxes: "خریدار کے ٹیکس:",
+        sellerTaxes: "بیچنے والے کے ٹیکس:",
+        constructionValue: "تعمیراتی قیمت:",
+        grandTotal: "کل قابل ادائیگی:",
+        whoPays: "<strong>کون کیا ادا کرتا ہے:</strong><br>• خریدار سٹامپ ڈیوٹی + بلدیہ + اپنا ایف بی آر سی وی ٹی ادا کرتا ہے<br>• بیچنے والا اپنا ایف بی آر سی وی ٹی ادا کرتا ہے<br>• تعمیراتی قیمت (اگر قابل اطلاق ہو) کل میں شامل کی جاتی ہے۔",
+        errorValue: "براہ مہربانی درست جائیداد کی قیمت درج کریں۔",
+        initialResult: "اوپر جائیداد کی تفصیلات درج کریں اور <strong>حساب لگائیں</strong> پر کلک کریں تاکہ مکمل بریک ڈاؤن دیکھ سکیں۔",
+        valueLabel: "جائیداد کی قیمت (روپے)",
+        sellerLabel: "بیچنے والے کی حیثیت",
+        buyerLabel: "خریدنے والے کی حیثیت",
+        committeeLabel: "کمیٹی / علاقے کی قسم",
+        constructedLabel: "کیا جائیداد تعمیر شدہ ہے؟",
+        areaLabel: "کورڈ ایریا (مربع فٹ) — صرف اگر تعمیر شدہ ہو",
+        committeeHint: "بیچنے والے کے ایف بی آر ریٹ پر اثر ڈالتا ہے",
+        areaHint: "تعمیراتی قیمت کا حساب لگانے کے لیے @ Rs. 800 فی مربع فٹ",
+        calcButton: "کل ٹیکس کا حساب لگائیں",
+        formTitle: "اپنی جائیداد کی تفصیلات درج کریں",
+        resultsTitle: "حساب کے نتائج",
+        printResults: "پرنٹ کریں",
+        downloadImage: "PNG تصویر ڈاؤن لوڈ کریں",
+        shareResults: "نتائج شیئر کریں"
+      },
+      en: {
+        purchaserTaxes: "Purchaser Taxes:",
+        sellerTaxes: "Seller Taxes:",
+        constructionValue: "Construction Value:",
+        grandTotal: "Grand Total Payable:",
+        whoPays: "<strong>Who pays what:</strong><br>• Purchaser pays Stamp Duty + Baldia + their FBR CVT<br>• Seller pays their share of FBR CVT<br>• Construction value (if applicable) is added to the total.",
+        errorValue: "Please enter a valid property value.",
+        initialResult: "Enter property details above and click <strong>Calculate</strong> to see the full breakdown.",
+        valueLabel: "Property Value (Rs)",
+        sellerLabel: "Seller Status",
+        buyerLabel: "Purchaser Status",
+        committeeLabel: "Committee / Area Type",
+        constructedLabel: "Is the Property Constructed?",
+        areaLabel: "Covered Area (sq ft) — only if constructed",
+        committeeHint: "Affects seller FBR rate",
+        areaHint: "Used to calculate construction value @ Rs. 800 per sq ft",
+        calcButton: "Calculate Total Taxes",
+        formTitle: "Enter Property Details",
+        resultsTitle: "Calculation Results",
+        printResults: "Print",
+        downloadImage: "Download PNG",
+        shareResults: "Share Results"
+      }
+    };
+
+    function setLanguage(lang) {
+      currentLang = lang;
+
+      // Update toggle buttons
+      const btnUr = document.getElementById('lang-ur');
+      const btnEn = document.getElementById('lang-en');
+      if (lang === 'ur') {
+        btnUr.classList.add('bg-violet-600', 'text-white');
+        btnUr.classList.remove('text-zinc-200');
+        btnEn.classList.remove('bg-violet-600', 'text-white');
+        btnEn.classList.add('text-zinc-200');
+      } else {
+        btnEn.classList.add('bg-violet-600', 'text-white');
+        btnEn.classList.remove('text-zinc-200');
+        btnUr.classList.remove('bg-violet-600', 'text-white');
+        btnUr.classList.add('text-zinc-200');
+      }
+
+      // Set RTL for Urdu
+      const wrapper = document.getElementById('content-wrapper');
+      if (wrapper) {
+        wrapper.setAttribute('dir', lang === 'ur' ? 'rtl' : 'ltr');
+        wrapper.setAttribute('lang', lang);
+      }
+
+      // Clear any old viewport fixed positioning (now using sticky within content)
+      const toggleEl = document.getElementById('lang-toggle');
+      if (toggleEl) {
+        toggleEl.style.left = '';
+        toggleEl.style.right = '';
+      }
+
+      // Update elements with data-lang-key (labels, titles)
+      const elements = document.querySelectorAll('[data-lang-key]');
+      elements.forEach(el => {
+        const key = el.dataset.langKey;
+        if (translations[lang] && translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+
+      updateSelectOptions(lang);
+
+      // Update explanation block
+      const explanation = document.getElementById('explanation');
+      if (lang === 'ur') {
+        explanation.innerHTML = `
+          <h2 class="text-2xl font-semibold mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-info-circle text-violet-400"></i>
+            پنجاب ٹیکس کیلکولیٹر
+          </h2>
+          <p class="text-zinc-300 mb-4">
+            یہ آرمان کمپیوٹرز کا اپنا مفت ٹیکس کیلکولیٹر ہے — پنجاب، پاکستان میں جائیداد کی منتقلی کے لیے ایک مفت ٹول جو ہم نے بنایا ہے۔ یہ موجودہ ایف بی آر اور پنجاب ریونیو اتھارٹی کے سلیب کی بنیاد پر ٹیکس اور فیس کا درست تخمینہ لگاتا ہے۔
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6 text-sm">
+            <div>
+              <h3 class="font-semibold text-violet-400 mb-2">خریدار ادا کرتا ہے</h3>
+              <ul class="space-y-1 text-zinc-400">
+                <li><strong>سٹامپ ڈیوٹی:</strong> جائیداد کی قیمت کا 1%</li>
+                <li><strong>بلدیہ / مقامی میونسپل ٹیکس:</strong> جائیداد کی قیمت کا 1%</li>
+                <li><strong>ایف بی آر کیپیٹل ویلیو ٹیکس (سی وی ٹی):</strong> 
+                  <br>• فائلر: <strong>1.5%</strong>
+                  <br>• لیٹ فائلر: <strong>4.5%</strong>
+                  <br>• نان فائلر: <strong>10.5%</strong>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="font-semibold text-violet-400 mb-2">بیچنے والا ادا کرتا ہے (ایف بی آر سی وی ٹی)</h3>
+              <ul class="space-y-1 text-zinc-400">
+                <li><strong>اندرون (شہری) علاقے:</strong> 
+                  <br>• فائلر: 4.5% • لیٹ فائلر: 7.5% • نان فائلر: 12.5%
+                </li>
+                <li><strong>بیرون (دیہی) علاقے:</strong> 
+                  <br>• فائلر یا لیٹ فائلر: 4.5% • نان فائلر: 11.5%
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-6 border-t border-zinc-800 text-sm">
+            <p class="text-zinc-400">
+              <strong>تعمیر شدہ جائیدادوں کے لیے:</strong><br>
+              اگر جائیداد "تعمیر شدہ" ہے تو کورڈ ایریا کے فی مربع فٹ 800 روپے کا اضافی تعمیراتی ویلیو شامل کیا جاتا ہے۔
+            </p>
+            <p class="mt-3 text-xs text-zinc-400">
+              <strong>ڈس کلیمر:</strong> یہ صرف تخمینہ ہے۔ اصل رقم جائیداد کی آفیشل ڈی سی ریٹ، درست مقام، موجودہ سرکاری نوٹیفیکیشنز، اور رجسٹرنگ اتھارٹی کے اندازے پر منحصر ہے۔ ہمیشہ مقامی رجسٹرار، وکیل یا تحصیل آفس سے تصدیق کریں۔
+            </p>
+          </div>
+        `;
+      } else {
+        explanation.innerHTML = `
+          <h2 class="text-2xl font-semibold mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-info-circle text-violet-400"></i>
+            Punjab Tax Calculator
+          </h2>
+          <p class="text-zinc-300 mb-4">
+            This is <strong>Arman Computers' own Tax Calculator</strong> — a free tool we built for property transfers in Punjab, Pakistan.
+            It calculates the exact taxes and fees based on current FBR and Punjab Revenue Authority slabs.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6 text-sm">
+            <div>
+              <h3 class="font-semibold text-violet-400 mb-2">Purchaser Pays</h3>
+              <ul class="space-y-1 text-zinc-400">
+                <li><strong>Stamp Duty:</strong> 1% of property value</li>
+                <li><strong>Baldia / Local Municipal Tax:</strong> 1% of property value</li>
+                <li><strong>FBR Capital Value Tax (CVT):</strong> 
+                  <br>• Filer: <strong>1.5%</strong> • Late Filer: <strong>4.5%</strong> • Non-Filer: <strong>10.5%</strong>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="font-semibold text-violet-400 mb-2">Seller Pays (FBR CVT)</h3>
+              <ul class="space-y-1 text-zinc-400">
+                <li><strong>Androon (Urban):</strong> Filer 4.5% • Late Filer 7.5% • Non-Filer 12.5%</li>
+                <li><strong>Beron (Rural):</strong> Filer or Late Filer 4.5% • Non-Filer 11.5%</li>
+              </ul>
+              <p class="mt-2 text-xs text-zinc-400">Rates vary by filer status and area (Androon vs Beron).</p>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-6 border-t border-zinc-800 text-sm">
+            <p class="text-zinc-400">
+              <strong>Constructed Properties:</strong> Add Rs. 800 per sq ft covered area for "Tameer Shuda" properties.
+            </p>
+            <p class="mt-3 text-xs text-zinc-400">
+              <strong>Disclaimer:</strong> Estimates only. Final taxes based on official DC rates and current notifications. Verify with local authorities.
+            </p>
+          </div>
+        `;
+      }
+
+      // Update result if present
+      const out = document.getElementById('out');
+      const resultHtml = out.innerHTML;
+      if (resultHtml.includes('Rs') || resultHtml.includes('خریدار')) {
+        // Rebuild result using current calc values
+        // For simplicity, store last params and re-calc
+        if (window.lastCalcParams) {
+          const {value, seller, buyer, committee, constructed, area} = window.lastCalcParams;
+          // Temporarily set inputs
+          document.getElementById('value').value = value;
+          document.getElementById('seller').value = seller;
+          document.getElementById('buyer').value = buyer;
+          document.getElementById('committee').value = committee;
+          document.getElementById('constructed').value = constructed;
+          document.getElementById('area').value = area;
+          calc();
+        }
+      } else {
+        // Update initial text
+        out.innerHTML = `<div class="text-zinc-300 text-center pt-8">${translations[lang].initialResult}</div>`;
+      }
+
+      // Update select option texts for bilingual
+      updateSelectOptions(lang);
+
+      // Refresh share/print button titles for current language
+      const btnPrint = document.getElementById('btn-print-results');
+      if (btnPrint) btnPrint.title = translations[lang].printResults || btnPrint.title;
+      const btnDownload = document.getElementById('btn-download-image');
+      if (btnDownload) btnDownload.title = translations[lang].downloadImage || btnDownload.title;
+      const btnShare = document.getElementById('btn-share-results');
+      if (btnShare) btnShare.title = translations[lang].shareResults || btnShare.title;
+    }
+
+  function updateSelectOptions(lang) {
+      const sellerSel = document.getElementById('seller');
+      const buyerSel = document.getElementById('buyer');
+      const committeeSel = document.getElementById('committee');
+      const constructedSel = document.getElementById('constructed');
+
+      if (lang === 'ur') {
+        sellerSel.options[0].text = 'فائلر';
+        sellerSel.options[1].text = 'لیٹ فائلر';
+        sellerSel.options[2].text = 'نان فائلر';
+        buyerSel.options[0].text = 'فائلر';
+        buyerSel.options[1].text = 'لیٹ فائلر';
+        buyerSel.options[2].text = 'نان فائلر';
+        committeeSel.options[0].text = 'اندرون (شہری)';
+        committeeSel.options[1].text = 'بیرون (دیہی)';
+        constructedSel.options[0].text = 'نہیں (خالی پلاٹ)';
+        constructedSel.options[1].text = 'ہاں (تعمیر شدہ)';
+      } else {
+        sellerSel.options[0].text = 'Filer';
+        sellerSel.options[1].text = 'Late Filer';
+        sellerSel.options[2].text = 'Non Filer';
+        buyerSel.options[0].text = 'Filer';
+        buyerSel.options[1].text = 'Late Filer';
+        buyerSel.options[2].text = 'Non Filer';
+        committeeSel.options[0].text = 'Androon (Urban)';
+        committeeSel.options[1].text = 'Beron (Rural)';
+        constructedSel.options[0].text = 'No (Open Plot)';
+        constructedSel.options[1].text = 'Yes (Tameer Shuda)';
+      }
+    }
+
+    function calc() {
+      let value = Number(document.getElementById('value').value || 0);
+      let seller = document.getElementById('seller').value;
+      let buyer = document.getElementById('buyer').value;
+      let committee = document.getElementById('committee').value;
+      let constructed = document.getElementById('constructed').value;
+      let area = Number(document.getElementById('area').value || 0);
+
+      if (value <= 0) {
+        document.getElementById('out').innerHTML = `<div class="text-rose-400">${translations[currentLang].errorValue}</div>`;
+        return;
+      }
+
+      // Store for language switch
+      window.lastCalcParams = {value, seller, buyer, committee, constructed, area};
+
+      // Purchaser side
+      let stamp = value * 0.01;
+      let baldia = value * 0.01;
+
+      let buyerFBR = {
+        "Filer": 0.015,
+        "Late Filer": 0.045,
+        "Non Filer": 0.105
+      }[buyer];
+
+      let sellerFBR = 0;
+      if (committee === "Androon") {
+        sellerFBR = { "Filer": 0.045, "Late Filer": 0.075, "Non Filer": 0.125 }[seller];
+      } else {
+        sellerFBR = { "Filer": 0.045, "Late Filer": 0.045, "Non Filer": 0.115 }[seller];
+      }
+
+      let purchaserTotal = stamp + baldia + (value * buyerFBR);
+      let sellerTotal = value * sellerFBR;
+      let construction = (constructed === "Yes") ? area * 800 : 0;
+
+      let grand = purchaserTotal + sellerTotal + construction;
+
+      // Store full results for export / share (in addition to params for re-calc on lang switch)
+      window.lastCalcResults = {
+        value, stamp, baldia,
+        purchaserTotal, sellerTotal, construction, grand,
+        buyer, seller, committee, constructed, area
+      };
+
+      let t = translations[currentLang];
+      let stampLabel = currentLang === 'ur' ? 'سٹامپ ڈیوٹی (1%)' : 'Stamp Duty (1%)';
+      let baldiaLabel = currentLang === 'ur' ? 'بلدیہ / مقامی ٹیکس (1%)' : 'Baldia / Local Tax (1%)';
+      let purchaserFbrLabel = currentLang === 'ur' ? `خریدار ایف بی آر سی وی ٹی (${buyer})` : `Purchaser FBR CVT (${buyer})`;
+      let sellerFbrLabel = currentLang === 'ur' ? `بیچنے والا ایف بی آر سی وی ٹی (${seller})` : `Seller FBR CVT (${seller})`;
+      let constructionLabel = currentLang === 'ur' ? `تعمیراتی قیمت (${area} مربع فٹ @ Rs 800)` : `Construction Value (${area} sq ft @ Rs 800)`;
+
+      let html = `
+        <div class="space-y-2">
+          <div class="tax-row">
+            <span class="text-zinc-400">${stampLabel}</span>
+            <span class="font-medium">Rs ${stamp.toLocaleString()}</span>
+          </div>
+          <div class="tax-row">
+            <span class="text-zinc-400">${baldiaLabel}</span>
+            <span class="font-medium">Rs ${baldia.toLocaleString()}</span>
+          </div>
+          <div class="tax-row">
+            <span class="text-zinc-400">${purchaserFbrLabel}</span>
+            <span class="font-medium">Rs ${(value * buyerFBR).toLocaleString()}</span>
+          </div>
+          <div class="pt-2 text-emerald-400 font-semibold">
+            ${t.purchaserTaxes} Rs ${purchaserTotal.toLocaleString()}
+          </div>
+
+          <div class="tax-row pt-4 border-t border-zinc-700 mt-2">
+            <span class="text-zinc-400">${sellerFbrLabel}</span>
+            <span class="font-medium">Rs ${sellerTotal.toLocaleString()}</span>
+          </div>
+          <div class="text-emerald-400 font-semibold">
+            ${t.sellerTaxes} Rs ${sellerTotal.toLocaleString()}
+          </div>
+
+          ${construction > 0 ? `
+          <div class="tax-row pt-2">
+            <span class="text-zinc-400">${constructionLabel}</span>
+            <span class="font-medium">Rs ${construction.toLocaleString()}</span>
+          </div>` : ''}
+
+          <div class="pt-4 border-t border-zinc-700 mt-3 flex justify-between items-center text-lg">
+            <span class="font-semibold">${t.grandTotal}</span>
+            <span class="font-bold text-violet-400">Rs ${grand.toLocaleString()}</span>
+          </div>
+
+          <div class="pt-3 mt-2 text-[10px] text-zinc-400">
+            ${t.whoPays}
+          </div>
+        </div>
+      `;
+
+      document.getElementById('out').innerHTML = html;
+
+      // Enable the share/print buttons now that we have results
+      ['btn-print-results', 'btn-download-image', 'btn-share-results'].forEach(id => {
+        const b = document.getElementById(id);
+        if (b) b.disabled = false;
+      });
+    }
+
+    // Optional: Calculate on Enter key in inputs
+    document.querySelectorAll('#value, #area').forEach(input => {
+      input.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') calc();
+      });
+    });
+
+    // === Branded Share / Print / Download (pure Canvas - no html2canvas, no tainted canvas) ===
+    function getResultsTextSummary() {
+      const outEl = document.getElementById('out');
+      if (!outEl) return currentLang === 'ur' ? 'پہلے حساب لگائیں۔' : 'Please calculate first.';
+      const titleEl = document.querySelector('[data-lang-key="resultsTitle"]');
+      const title = titleEl ? titleEl.textContent.trim() : (currentLang === 'ur' ? 'حساب کے نتائج' : 'Calculation Results');
+      let text = title + '\n' + new Date().toLocaleString(currentLang === 'ur' ? 'ur-PK' : undefined) + '\n\n';
+      text += outEl.innerText.trim() + '\n\n';
+      if (currentLang === 'ur') {
+        text += 'یہ نتائج آرمان کمپیوٹرز کے مفت ٹیکس کیلکولیٹر سے ہیں۔\n' +
+                'مکتبہ مرکزی: آفس نمبر 57، ال یقین ٹریڈ سنٹر، بوریوالہ\n' +
+                'شاخ: ال بہا، دبا روڈ، فجیرہ E89\n' +
+                'ای میل: iarmancomputers@gmail.com | واٹس ایپ: 0300-6991759';
+      } else {
+        text += 'Generated with Arman Computers free Tax Calculator.\n' +
+                'Head Office: Office No. 57, Al-Yaqeen Trade Center, Burewala\n' +
+                'Branch: Al Baha, Dibba Road, Fujairah E89\n' +
+                'Email: iarmancomputers@gmail.com | WhatsApp: 0300-6991759';
+      }
+      return text;
+    }
+
+    function generateResultsImage() {
+      // Pure JavaScript Canvas (no html2canvas, no tainted canvas, no external images)
+      if (!window.lastCalcResults) {
+        alert(currentLang === 'ur' ? 'براہ مہربانی پہلے حساب لگائیں۔' : 'Please calculate first.');
+        return null;
+      }
+
+      const d = window.lastCalcResults;
+      const isUr = currentLang === 'ur';
+
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d', { alpha: false });
+
+      const W = 880;
+      const H = 1050;
+      canvas.width = W;
+      canvas.height = H;
+
+      // Dark background (match site theme)
+      ctx.fillStyle = '#111113';
+      ctx.fillRect(0, 0, W, H);
+
+      // Top branding bar
+      ctx.fillStyle = '#18181b';
+      ctx.fillRect(0, 0, W, 85);
+
+      // Arman Computers logo text (no external image = no taint)
+      ctx.fillStyle = '#f4f4f5';
+      ctx.font = 'bold 26px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+      ctx.fillText('Arman ', 36, 42);
+      ctx.fillStyle = '#a78bfa';
+      ctx.fillText('Computers', 36 + ctx.measureText('Arman ').width, 42);
+
+      // Subtitle
+      ctx.fillStyle = '#71717a';
+      ctx.font = '13px system-ui, sans-serif';
+      const sub = isUr ? 'مفت ٹیکس کیلکولیٹر • پنجاب، پاکستان' : 'Free Tax Calculator • Punjab, Pakistan';
+      ctx.fillText(sub, 36, 64);
+
+      // Date top-right
+      ctx.fillStyle = '#52525b';
+      ctx.font = '11px system-ui';
+      const dateStr = new Date().toLocaleDateString() + '  ' + new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+      ctx.fillText(dateStr, W - 36 - ctx.measureText(dateStr).width, 42);
+
+      // Main title
+      ctx.fillStyle = '#e4e4e7';
+      ctx.font = 'bold 20px system-ui';
+      const mainTitle = isUr ? 'ٹیکس کیلکولیشن کے نتائج' : 'Tax Calculation Results';
+      ctx.fillText(mainTitle, 36, 120);
+
+      // Subtle divider
+      ctx.strokeStyle = '#27272a';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(36, 138);
+      ctx.lineTo(W - 36, 138);
+      ctx.stroke();
+
+      // Results rows
+      let y = 175;
+      const left = 36;
+      const right = W - 36;
+      const rowH = 34;
+
+      function row(label, val) {
+        ctx.fillStyle = '#a1a1aa';
+        ctx.font = '15px system-ui';
+        ctx.fillText(label, left, y);
+
+        ctx.fillStyle = '#f4f4f5';
+        ctx.font = '600 15px system-ui';
+        const v = 'Rs ' + val.toLocaleString();
+        ctx.fillText(v, right - ctx.measureText(v).width, y);
+        y += rowH;
+      }
+
+      // Property value
+      row( isUr ? 'جائیداد کی قیمت' : 'Property Value', d.value );
+
+      // Purchaser
+      row( isUr ? 'خریدار کے ٹیکس' : 'Purchaser Taxes', d.purchaserTotal );
+
+      // Seller
+      row( isUr ? 'بیچنے والے کے ٹیکس' : 'Seller Taxes', d.sellerTotal );
+
+      if (d.construction > 0) {
+        row( isUr ? 'تعمیراتی قیمت' : 'Construction Value', d.construction );
+      }
+
+      // Strong divider before total
+      y += 8;
+      ctx.strokeStyle = '#3f3f46';
+      ctx.beginPath();
+      ctx.moveTo(left, y);
+      ctx.lineTo(right, y);
+      ctx.stroke();
+      y += 28;
+
+      // Grand total - prominent
+      ctx.fillStyle = '#a78bfa';
+      ctx.font = '600 18px system-ui';
+      ctx.fillText( isUr ? 'کل قابل ادائیگی' : 'Grand Total Payable', left, y );
+
+      ctx.font = 'bold 26px system-ui';
+      const grandStr = 'Rs ' + d.grand.toLocaleString();
+      ctx.fillText(grandStr, right - ctx.measureText(grandStr).width, y );
+      y += 48;
+
+      // Who pays note (clean version)
+      ctx.fillStyle = '#71717a';
+      ctx.font = '13px system-ui';
+      const notes = isUr
+        ? [
+            '• خریدار: سٹامپ ڈیوٹی (1%) + بلدیہ (1%) + اپنا FBR CVT',
+            '• بیچنے والا: اپنا FBR CVT (اندرون/بیرون کے مطابق)',
+            '• تعمیر شدہ جائیداد: + Rs 800 فی مربع فٹ'
+          ]
+        : [
+            '• Purchaser: Stamp Duty (1%) + Baldia (1%) + their FBR CVT',
+            '• Seller: Their FBR CVT (Androon vs Beron rates apply)',
+            '• Constructed property: + Rs 800 per sq ft'
+          ];
+
+      notes.forEach(n => {
+        ctx.fillText(n, left, y);
+        y += 20;
+      });
+
+      // Footer ad (strong branding for free advertisement) - now includes full contact details
+      y += 20;
+      ctx.strokeStyle = '#27272a';
+      ctx.beginPath();
+      ctx.moveTo(left, y);
+      ctx.lineTo(right, y);
+      ctx.stroke();
+      y += 24;
+
+      ctx.fillStyle = '#a1a1aa';
+      ctx.font = 'bold 13px system-ui';
+      ctx.fillText('Arman Computers', left, y);
+
+      ctx.font = '11px system-ui';
+      y += 17;
+
+      if (isUr) {
+        ctx.fillText('مکتبہ مرکزی: آفس نمبر 57، ال یقین ٹریڈ سنٹر، بوریوالہ', left, y);
+        y += 15;
+        ctx.fillText('شاخ: ال بہا، دبا روڈ، فجیرہ E89', left, y);
+        y += 15;
+        ctx.fillText('ای میل: iarmancomputers@gmail.com  •  واٹس ایپ: 0300-6991759', left, y);
+      } else {
+        ctx.fillText('Head Office: Office No. 57, Al-Yaqeen Trade Center, Burewala', left, y);
+        y += 15;
+        ctx.fillText('Branch: Al Baha, Dibba Road, Fujairah E89', left, y);
+        y += 15;
+        ctx.fillText('Email: iarmancomputers@gmail.com  •  WhatsApp: 0300-6991759', left, y);
+      }
+
+      return canvas;
+    }
+
+    async function downloadResultsAsImage() {
+      try {
+        const canvas = generateResultsImage();
+        if (!canvas) return;
+        const link = document.createElement('a');
+        link.download = `arman-tax-calculation-${new Date().toISOString().slice(0,10)}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      } catch (err) {
+        console.error(err);
+        alert('Error generating image: ' + (err.message || err));
+      }
+    }
+
+    async function printResults() {
+      try {
+        const canvas = generateResultsImage();
+        if (!canvas) return;
+        const dataUrl = canvas.toDataURL('image/png');
+        const w = window.open('', '_blank', 'width=900,height=1200');
+        if (!w) {
+          alert(currentLang === 'ur' ? 'پاپ اپ بلاک ہے۔ براہ مہربانی پرنٹ کے لیے براؤزر کی اجازت دیں۔' : 'Popup blocked. Please allow popups to print.');
+          return;
+        }
+        w.document.write(`
+          <!doctype html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+            <title>Arman Computers - Tax Calculation Results</title>
+            <style>
+              body { margin:0; padding:20px; background:#f8f8f8; font-family:system-ui; display:flex; flex-direction:column; align-items:center; }
+              img { max-width:100%; height:auto; border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,.15); }
+              .footer-note { margin-top:12px; font-size:11px; color:#666; text-align:center; }
+              @media print {
+                body { background:white; padding:0; }
+                img { box-shadow:none; max-width:100%; width:100%; }
+                .footer-note { display:none; }
+              }
+            </style>
+          </head>
+          <body>
+            <img src="${dataUrl}" alt="Arman Computers Tax Results" />
+            <div class="footer-note">Arman Computers — Free Tax Calculator • iarmancomputers@gmail.com • 0300-6991759</div>
+            <script>
+              window.onload = function() {
+                setTimeout(function() {
+                  window.print();
+                  setTimeout(function(){ window.close(); }, 300);
+                }, 80);
+              };
+            <\/script>
+          </body>
+          </html>
+        `);
+        w.document.close();
+      } catch (err) {
+        console.error(err);
+        alert('Error printing: ' + (err.message || err));
+      }
+    }
+
+    async function shareResults() {
+      try {
+        const canvas = generateResultsImage();
+        if (!canvas) return;
+
+        const summary = getResultsTextSummary();
+        canvas.toBlob(async (blob) => {
+          const file = new File([blob], `arman-tax-calculation.png`, {type: 'image/png'});
+
+          // Modern Web Share with file (great on mobile Chrome/Safari)
+          if (navigator.canShare && navigator.canShare({files: [file]})) {
+            try {
+              await navigator.share({
+                title: 'Tax Calculation Results',
+                text: summary,
+                files: [file]
+              });
+              return;
+            } catch (err) { /* fallthrough */ }
+          }
+
+          // Fallback: download image + copy text + open WhatsApp with summary (user attaches the image)
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'arman-tax-calculation.png';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+
+          try {
+            await navigator.clipboard.writeText(summary);
+          } catch (e) {}
+
+          const waMsg = encodeURIComponent(summary + '\n\n(Image attached - generated by Arman Computers free calculator)');
+          window.open('https://wa.me/923006991759?text=' + waMsg, '_blank');
+
+          // Small feedback
+          const msg = currentLang === 'ur' 
+            ? 'تصویر ڈاؤن لوڈ ہو گئی + کلپ بورڈ پر کاپی + واٹس ایپ کھل گیا (تصویر منسلک کریں)' 
+            : 'Image downloaded + summary copied. WhatsApp opened (attach the image).';
+          // Use a non-blocking notice
+          const note = document.createElement('div');
+          note.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#18181b;border:1px solid #3f3f46;color:#e4e4e7;padding:8px 14px;border-radius:9999px;font-size:12px;z-index:9999;';
+          note.textContent = msg;
+          document.body.appendChild(note);
+          setTimeout(() => note.remove(), 2600);
+        }, 'image/png', 0.95);
+      } catch (err) {
+        console.error(err);
+        alert('Error sharing: ' + (err.message || err));
+      }
+    }
+
+    // Set initial language and result text
+    document.addEventListener('DOMContentLoaded', () => {
+      // Ensure initial dir is set (in case)
+      const wrapper = document.getElementById('content-wrapper');
+      if (wrapper) {
+        wrapper.setAttribute('dir', 'rtl');
+        wrapper.setAttribute('lang', 'ur');
+      }
+      setLanguage('ur');
+      const out = document.getElementById('out');
+      out.innerHTML = `<div class="text-zinc-300 text-center pt-8">${translations.ur.initialResult}</div>`;
+    });
+  </script>
+</body>
+</html>

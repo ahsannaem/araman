@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CyberForge Mastery: Offensive &amp; Defensive Cybersecurity. Master red team attacks and blue team defenses. From zero to elite pentester &amp; defender in 12-16 weeks.">
+  <title>CyberForge Mastery | Arman Computers</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+
+  <!-- Exact same nav structure as other pages for design consistency -->
+  <nav class="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 z-50 relative">
+    <div class="max-w-[1280px] mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3 text-xl font-bold tracking-tight">
+        <img src="assets/logo.svg" alt="" class="h-9 w-auto shrink-0" width="32" height="36">
+        <span>Arman <span class="text-violet-400">Computers</span></span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <div class="nav-dropdown">
+          <a href="services.html" class="nav-link hover:text-violet-400 inline-flex items-center gap-1.5">
+            Services
+            <i class="fa-solid fa-chevron-down text-[10px] opacity-60"></i>
+          </a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="services.html#saas" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-cloud text-violet-400"></i> SaaS Development</a>
+            <a href="services.html#ai" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-robot text-fuchsia-400"></i> AI Development</a>
+            <a href="services.html#web" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-code text-cyan-400"></i> Web Applications</a>
+            <a href="services.html#mvp" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-rocket text-emerald-400"></i> MVP &amp; Prototyping</a>
+            <a href="services.html#devops" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-server text-amber-400"></i> DevOps &amp; Cloud</a>
+            <a href="services.html#consulting" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-lightbulb text-rose-400"></i> Consulting</a>
+            <a href="services.html" class="nav-dropdown-item nav-dropdown-all" role="menuitem">View all services</a>
+          </div>
+        </div>
+        <a href="index.html#solutions" class="nav-link hover:text-violet-400">Solutions</a>
+        <a href="courses.html" class="nav-link active hover:text-violet-400">Courses</a>
+        <a href="index.html#about" class="nav-link hover:text-violet-400">About</a>
+        <a href="contact.html" class="nav-link hover:text-violet-400">Contact</a>
+      </div>
+
+      <a href="contact.html" class="hidden md:inline-block px-5 py-2 text-sm font-medium bg-violet-600 rounded-xl hover:bg-violet-500 transition">
+        Book a Consultation
+      </a>
+
+      <button id="menu-btn" type="button" class="md:hidden text-2xl text-zinc-300" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 border-t border-zinc-800 bg-zinc-950 px-6 py-4 flex flex-col gap-4 text-sm z-50 shadow-xl">
+      <div>
+        <button type="button" id="mobile-services-btn" class="nav-link hover:text-violet-400 flex items-center gap-2 w-full text-left">
+          Services
+          <i class="fa-solid fa-chevron-down text-[10px] opacity-60"></i>
+        </button>
+        <div id="mobile-services-sub" class="nav-services-sub">
+          <a href="services.html#saas" class="text-zinc-400 hover:text-violet-400">SaaS Development</a>
+          <a href="services.html#ai" class="text-zinc-400 hover:text-violet-400">AI Development</a>
+          <a href="services.html#web" class="text-zinc-400 hover:text-violet-400">Web Applications</a>
+          <a href="services.html#mvp" class="text-zinc-400 hover:text-violet-400">MVP &amp; Prototyping</a>
+          <a href="services.html#devops" class="text-zinc-400 hover:text-violet-400">DevOps &amp; Cloud</a>
+          <a href="services.html#consulting" class="text-zinc-400 hover:text-violet-400">Consulting</a>
+          <a href="services.html" class="text-violet-400">View all services</a>
+        </div>
+      </div>
+      <a href="index.html#solutions" class="nav-link hover:text-violet-400">Solutions</a>
+      <a href="courses.html" class="nav-link active hover:text-violet-400">Courses</a>
+      <a href="index.html#about" class="nav-link hover:text-violet-400">About</a>
+      <a href="contact.html" class="nav-link hover:text-violet-400">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Page header -->
+  <header class="page-header max-w-[1280px] mx-auto px-6 text-center reveal">
+    <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-medium tracking-widest text-violet-400 mb-4">
+      12–16 WEEKS • ONLINE + LABS
+    </div>
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">CyberForge Mastery</h1>
+    <p class="text-zinc-400 max-w-2xl mx-auto text-base sm:text-lg">
+      Offensive &amp; Defensive Cybersecurity: From Zero to Elite Pentester &amp; Defender
+    </p>
+  </header>
+
+  <!-- Hero -->
+  <section class="pb-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="relative rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-900">
+        <div class="absolute inset-0 bg-[radial-gradient(#3f3f46_0.5px,transparent_1px)] bg-[length:4px_4px]"></div>
+        <div class="relative px-8 py-16 md:px-16 md:py-20">
+          <div class="max-w-3xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest mb-6 border border-white/20">
+              RED TEAM + BLUE TEAM
+            </div>
+            
+            <h2 class="text-white text-3xl sm:text-4xl md:text-[52px] font-bold tracking-tighter leading-[1.05] mb-6">
+              Master both sides of the cyber battlefield.
+            </h2>
+            
+            <p class="text-lg sm:text-xl md:text-2xl text-zinc-200 max-w-2xl mb-8">
+              Learn to attack like a pro hacker and defend like a fortress architect. Become the expert companies fight to hire.
+            </p>
+            
+            <div class="flex flex-wrap gap-3">
+              <button onclick="showEnrollModal()" 
+                      class="px-6 sm:px-9 py-3 sm:py-4 bg-violet-600 hover:bg-violet-500 rounded-2xl font-semibold text-base sm:text-lg transition">
+                Enroll Now
+              </button>
+              <button onclick="document.getElementById('curriculum').scrollIntoView({behavior:'smooth'})" 
+                      class="px-6 sm:px-9 py-3 sm:py-4 border border-white/70 hover:bg-white/10 rounded-2xl font-semibold text-base sm:text-lg transition">
+                View curriculum
+              </button>
+            </div>
+            
+            <div class="mt-6 flex items-center gap-4 text-sm text-zinc-400">
+              <div>12–16 weeks</div>
+              <div>•</div>
+              <div>Hands-on labs</div>
+              <div>•</div>
+              <div>Certificate + cert prep</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What you'll achieve -->
+  <section class="pb-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">What you'll achieve</h2>
+        <p class="text-zinc-400 max-w-md mx-auto">Elite offensive and defensive skills. Job-ready. Battle-tested.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-5 sm:p-7 card-hover">
+          <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-user-secret"></i></div>
+          <h3 class="font-semibold text-xl mb-2">Attack like a red teamer</h3>
+          <p class="text-sm text-zinc-400">Full offensive lifecycle: recon, exploitation, privilege escalation, and post-exploitation using real-world techniques.</p>
+        </div>
+        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-5 sm:p-7 card-hover">
+          <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="font-semibold text-xl mb-2">Defend like a blue team architect</h3>
+          <p class="text-sm text-zinc-400">Build resilient defenses, detect threats in real time, and master incident response.</p>
+        </div>
+        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-5 sm:p-7 card-hover">
+          <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3 class="font-semibold text-xl mb-2">Master the full toolkit</h3>
+          <p class="text-sm text-zinc-400">Nmap, Metasploit, Burp Suite, Wireshark, SIEM tools, and more — used professionally every day.</p>
+        </div>
+        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-5 sm:p-7 card-hover">
+          <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-file-alt"></i></div>
+          <h3 class="font-semibold text-xl mb-2">Write winning reports &amp; win clients</h3>
+          <p class="text-sm text-zinc-400">Professional pentest reports and clear communication that get you hired or paid.</p>
+        </div>
+        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-5 sm:p-7 card-hover">
+          <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-globe"></i></div>
+          <h3 class="font-semibold text-xl mb-2">Cloud, AD, and modern threats</h3>
+          <p class="text-sm text-zinc-400">Attack and defend cloud environments, Active Directory, and emerging threats including AI-assisted attacks.</p>
+        </div>
+        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-5 sm:p-7 card-hover">
+          <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-briefcase"></i></div>
+          <h3 class="font-semibold text-xl mb-2">Career-ready portfolio</h3>
+          <p class="text-sm text-zinc-400">Complete a full capstone pentest with professional report — ready to show employers or clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curriculum -->
+  <section id="curriculum" class="pb-16 bg-zinc-900">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="mb-8">
+        <h2 class="text-3xl md:text-4xl font-bold mb-2">Curriculum</h2>
+        <p class="text-zinc-400">10 core modules. Balanced offensive + defensive. 50/50 red team &amp; blue team.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
+          <div class="font-mono text-xs text-violet-400 mb-1">MODULE 0</div>
+          <div class="font-semibold mb-1">Foundations &amp; Mindset</div>
+          <div class="text-sm text-zinc-400">CIA Triad, threat landscape, ethics, networking, Linux/Windows CLI, lab setup.</div>
+        </div>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
+          <div class="font-mono text-xs text-violet-400 mb-1">MODULE 1</div>
+          <div class="font-semibold mb-1">Reconnaissance &amp; OSINT</div>
+          <div class="text-sm text-zinc-400">Passive/active intelligence, Google Dorks, Shodan, Maltego, theHarvester, Recon-ng.</div>
+        </div>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
+          <div class="font-mono text-xs text-violet-400 mb-1">MODULE 2</div>
+          <div class="font-semibold mb-1">Scanning &amp; Enumeration</div>
+          <div class="text-sm text-zinc-400">Advanced Nmap, vulnerability scanning, SMB/LDAP/AD enumeration.</div>
+        </div>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
+          <div class="font-mono text-xs text-violet-400 mb-1">MODULE 3</div>
+          <div class="font-semibold mb-1">Exploitation &amp; Access</div>
+          <div class="text-sm text-zinc-400">Metasploit mastery, password attacks, privilege escalation, client-side exploits.</div>
+        </div>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
+          <div class="font-mono text-xs text-violet-400 mb-1">MODULE 4</div>
+          <div class="font-semibold mb-1">Web &amp; Application Hacking</div>
+          <div class="text-sm text-zinc-400">OWASP Top 10, Burp Suite, SQLi, XSS, API testing with DVWA &amp; Juice Shop.</div>
+        </div>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
+          <div class="font-mono text-xs text-violet-400 mb-1">MODULE 5</div>
+          <div class="font-semibold mb-1">Wireless, IoT &amp; Advanced</div>
+          <div class="text-sm text-zinc-400">WiFi attacks, Evil Twin, social engineering, IoT, malware basics.</div>
+        </div>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
+          <div class="font-mono text-xs text-violet-400 mb-1">MODULE 6</div>
+          <div class="font-semibold mb-1">Defensive Architecture</div>
+          <div class="text-sm text-zinc-400">Defense-in-depth, Zero Trust, firewalls, IDS/IPS, hardening, cryptography.</div>
+        </div>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
+          <div class="font-mono text-xs text-violet-400 mb-1">MODULE 7</div>
+          <div class="font-semibold mb-1">Detection &amp; Incident Response</div>
+          <div class="text-sm text-zinc-400">SIEM, log analysis, Wireshark, threat hunting, IR lifecycle, forensics.</div>
+        </div>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
+          <div class="font-mono text-xs text-violet-400 mb-1">MODULE 8</div>
+          <div class="font-semibold mb-1">Advanced &amp; Emerging Threats</div>
+          <div class="text-sm text-zinc-400">Cloud security (AWS/Azure), Active Directory attacks/defense, purple teaming, AI threats.</div>
+        </div>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
+          <div class="font-mono text-xs text-violet-400 mb-1">MODULE 9</div>
+          <div class="font-semibold mb-1">Professional Pentesting &amp; Reporting</div>
+          <div class="text-sm text-zinc-400">Full engagement lifecycle, winning reports, career strategy, capstone project.</div>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <button onclick="document.getElementById('full-curriculum').classList.toggle('hidden'); this.innerText = this.innerText.includes('View') ? 'Hide full curriculum' : 'View full curriculum + bonuses';"
+                class="text-violet-400 hover:text-violet-300 text-sm font-medium flex items-center gap-2">
+          View full curriculum + bonuses <i class="fa-solid fa-chevron-down"></i>
+        </button>
+      </div>
+
+      <div id="full-curriculum" class="hidden mt-4 bg-zinc-950 border border-zinc-800 rounded-2xl p-6 text-sm text-zinc-400">
+        <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
+          <div><strong>Module 10 – Mastery &amp; Beyond:</strong> OSCP-style challenges, home lab building, CTFs, bug bounties, continuous learning roadmap.</div>
+          <div>All modules include guided labs, instructor feedback on key assignments, cheat sheets, and templates. Final capstone is a full authorized pentest with professional report.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section class="pb-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Tools You'll Master</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-center">
+          <i class="fa-solid fa-search text-3xl text-violet-400 mb-3"></i>
+          <div class="font-medium">Nmap + Recon Tools</div>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-center">
+          <i class="fa-solid fa-bomb text-3xl text-rose-400 mb-3"></i>
+          <div class="font-medium">Metasploit</div>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-center">
+          <div class="text-3xl font-bold mb-1 text-orange-400">B</div>
+          <div class="font-medium">Burp Suite</div>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-center">
+          <i class="fa-solid fa-network-wired text-3xl text-cyan-400 mb-3"></i>
+          <div class="font-medium">Wireshark</div>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-center">
+          <i class="fa-solid fa-shield-alt text-3xl text-emerald-400 mb-3"></i>
+          <div class="font-medium">SIEM &amp; Snort</div>
+        </div>
+      </div>
+      <p class="text-center text-sm text-zinc-500 mt-6">Plus many more: theHarvester, Recon-ng, OpenVAS, DVWA, Juice Shop, and custom lab environments.</p>
+    </div>
+  </section>
+
+  <!-- Bonuses -->
+  <section class="pb-16 bg-zinc-900">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Bonuses included</h2>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="premium-card bg-zinc-950 border border-zinc-800 rounded-2xl p-7">
+          <h4 class="font-semibold mb-2">50+ Resources</h4>
+          <p class="text-sm text-zinc-400">Cheat sheets, report templates, checklists, lab guides, and scripts.</p>
+        </div>
+        <div class="premium-card bg-zinc-950 border border-zinc-800 rounded-2xl p-7">
+          <h4 class="font-semibold mb-2">Private Community + AMAs</h4>
+          <p class="text-sm text-zinc-400">Ongoing support, networking, and live instructor sessions after the course.</p>
+        </div>
+        <div class="premium-card bg-zinc-950 border border-zinc-800 rounded-2xl p-7">
+          <h4 class="font-semibold mb-2">Certification Prep</h4>
+          <p class="text-sm text-zinc-400">Guides for Security+, CEH, PenTest+, and OSCP-style practice.</p>
+        </div>
+        <div class="premium-card bg-zinc-950 border border-zinc-800 rounded-2xl p-7">
+          <h4 class="font-semibold mb-2">Launch Your Services Bonus</h4>
+          <p class="text-sm text-zinc-400">How to start offering pentesting services, client acquisition, and pricing.</p>
+        </div>
+      </div>
+      <p class="text-center text-xs text-zinc-500 mt-8">Lifetime access • All future updates • 30-day money-back guarantee</p>
+    </div>
+  </section>
+
+  <!-- Who This Is For -->
+  <section class="pb-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Who this course is for</h2>
+      <div class="grid md:grid-cols-2 gap-5 text-sm">
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-7">
+          <ul class="space-y-3 text-zinc-300">
+            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Beginners with basic IT knowledge (we start from foundations)</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> IT professionals pivoting into cybersecurity</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Aspiring ethical hackers and pentesters</li>
+          </ul>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-7">
+          <ul class="space-y-3 text-zinc-300">
+            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> SOC analysts and security defenders</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Anyone wanting elite, job-ready red + blue team skills</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Those serious about OSCP, practical pentesting, or security engineering careers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enroll CTA -->
+  <section class="pb-20">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to become the defender who can also attack like a pro?</h2>
+      <p class="text-zinc-400 mb-8">12–16 weeks. Hands-on. Career-transforming.</p>
+      <button onclick="showEnrollModal()" 
+              class="px-10 py-4 bg-violet-600 hover:bg-violet-500 rounded-2xl font-semibold text-lg transition">
+        Enroll in CyberForge Mastery
+      </button>
+      <p class="mt-4 text-xs text-zinc-500">30-day money-back guarantee • Lifetime access</p>
+    </div>
+  </section>
+
+  <footer class="border-t border-zinc-800 pt-14 pb-10 text-sm">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-y-10">
+        <div class="col-span-2 md:col-span-1">
+          <a href="index.html" class="flex items-center gap-2 font-semibold text-lg">
+            <img src="assets/logo.svg" alt="" class="h-7 w-auto"> Arman Computers
+          </a>
+          <p class="mt-3 text-xs text-zinc-500">Building software that actually ships.</p>
+        </div>
+
+        <div>
+          <div class="font-medium text-xs tracking-widest text-zinc-500 mb-3">COMPANY</div>
+          <div class="space-y-[6px] text-zinc-400">
+            <a href="index.html#about" class="block hover:text-white">About</a>
+            <a href="contact.html" class="block hover:text-white">Contact</a>
+            <a href="services.html" class="block hover:text-white">Services</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="font-medium text-xs tracking-widest text-zinc-500 mb-3">LEARNING</div>
+          <div class="space-y-[6px] text-zinc-400">
+            <a href="courses.html" class="block hover:text-white">All Courses</a>
+            <a href="graphic-design-mastery.html" class="block hover:text-white">Graphic Design Mastery</a>
+            <a href="freelance-empire.html" class="block hover:text-white">Freelance Empire</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="font-medium text-xs tracking-widest text-zinc-500 mb-3">CONNECT</div>
+          <div class="space-y-[6px] text-zinc-400">
+            <a href="https://x.com/iarmancomputers" target="_blank" class="block hover:text-white">X</a>
+            <a href="https://www.instagram.com/iarmancomputers/" target="_blank" class="block hover:text-white">Instagram</a>
+            <a href="https://www.facebook.com/armancomputersandprinters/" target="_blank" class="block hover:text-white">Facebook</a>
+          </div>
+        </div>
+
+        <div class="md:text-right col-span-2 md:col-span-1">
+          <div class="text-xs text-zinc-500">© 2026 Arman Computers</div>
+          <div class="mt-1 text-xs text-zinc-500">Lahore &amp; Fujairah</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Enroll Modal -->
+  <div id="enroll-modal" onclick="if (event.target.id === 'enroll-modal') hideEnrollModal()" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-6">
+    <div onclick="event.stopImmediatePropagation()" class="bg-zinc-900 border border-zinc-800 rounded-2xl max-w-md w-full p-8">
+      <div class="flex justify-between mb-6">
+        <div>
+          <div class="font-bold text-xl">Enroll in CyberForge Mastery</div>
+          <div class="text-sm text-zinc-400">12–16 weeks of elite red + blue team training</div>
+        </div>
+        <button onclick="hideEnrollModal()" class="text-2xl leading-none text-zinc-400">×</button>
+      </div>
+
+      <div class="space-y-3 mb-6">
+        <button onclick="selectPayment('full')" class="w-full py-3 border border-violet-500 bg-violet-600/10 rounded-xl font-medium">Full Payment – Best Value</button>
+        <button onclick="selectPayment('installments')" class="w-full py-3 border border-zinc-700 hover:bg-zinc-800 rounded-xl font-medium">3 Monthly Installments</button>
+      </div>
+
+      <div id="payment-details" class="hidden text-sm mb-6"></div>
+
+      <button id="confirm-btn" onclick="completeEnrollment()" class="hidden w-full py-3 bg-violet-600 hover:bg-violet-500 rounded-2xl font-semibold">
+        Complete Enrollment (Demo)
+      </button>
+
+      <p class="text-center text-xs text-zinc-500 mt-4">This is a demo. In production this would connect to Stripe.</p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Sales page specific interactions (kept minimal, no style overrides)
+    function showEnrollModal() {
+      document.getElementById('enroll-modal').classList.remove('hidden');
+      document.getElementById('enroll-modal').classList.add('flex');
+      document.getElementById('payment-details').classList.add('hidden');
+      document.getElementById('confirm-btn').classList.add('hidden');
+    }
+
+    function hideEnrollModal() {
+      const modal = document.getElementById('enroll-modal');
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+    }
+
+    function selectPayment(type) {
+      const details = document.getElementById('payment-details');
+      const btn = document.getElementById('confirm-btn');
+
+      if (type === 'full') {
+        details.innerHTML = `
+          <div class="font-medium mb-1">Full Payment</div>
+          <div class="text-2xl font-semibold mb-1">$1,997 <span class="text-sm font-normal text-zinc-500">one-time</span></div>
+          <div class="text-xs text-emerald-400">Save $400 vs installments</div>
+        `;
+      } else {
+        details.innerHTML = `
+          <div class="font-medium mb-1">3 Monthly Installments</div>
+          <div class="text-2xl font-semibold mb-1">$799 × 3</div>
+          <div class="text-xs text-zinc-400">First payment today, then every 30 days</div>
+        `;
+      }
+
+      details.classList.remove('hidden');
+      btn.classList.remove('hidden');
+    }
+
+    function completeEnrollment() {
+      const btn = document.getElementById('confirm-btn');
+      btn.textContent = 'Enrollment Submitted (Demo)';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        alert("Thank you! In a real system you'd receive a confirmation email and access to the course portal + community.\n\nThis is a fully functional demo flow.");
+        hideEnrollModal();
+        btn.textContent = 'Complete Enrollment (Demo)';
+        btn.disabled = false;
+        document.getElementById('payment-details').classList.add('hidden');
+        btn.classList.add('hidden');
+      }, 800);
+    }
+  </script>
+</body>
+</html>

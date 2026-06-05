@@ -12,7 +12,7 @@
 </head>
 <body class="bg-zinc-950 text-zinc-100">
 
-  <nav class="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 z-50">
+  <nav class="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 z-50 relative">
     <div class="max-w-[1280px] mx-auto px-6 py-4 flex justify-between items-center">
       <a href="index.html" class="flex items-center gap-3 text-xl font-bold tracking-tight">
         <img src="assets/logo.svg" alt="" class="h-9 w-auto shrink-0" width="32" height="36">
@@ -182,6 +182,45 @@
       </div>
     </div>
   </div>
+
+  <!-- Featured Product Showcase: Tax Calculator -->
+  <section class="max-w-[1280px] mx-auto px-6 py-12">
+    <div class="premium-card bg-zinc-900 border border-violet-500/30 rounded-3xl p-8 md:p-10">
+      <div class="grid md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-7">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 text-violet-400 text-xs font-medium tracking-widest mb-4">
+            BUILT BY ARMAN COMPUTERS
+          </div>
+          <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Tax Calculator for Punjab</h2>
+          <p class="text-lg text-zinc-400 mb-6 max-w-xl">
+            Our free, accurate tool for estimating all property transfer taxes in Punjab, Pakistan — including Stamp Duty, FBR CVT, Baldia, seller obligations, and construction values.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="tax-calculator.html" class="inline-flex items-center gap-3 px-8 py-3 bg-white text-black font-semibold rounded-2xl hover:bg-violet-400 hover:text-white transition">
+              Try Tax Calculator
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="tax-calculator.html" class="inline-flex items-center gap-3 px-8 py-3 border border-zinc-700 hover:border-zinc-500 rounded-2xl font-semibold transition">
+              See how it works
+            </a>
+          </div>
+          <p class="mt-4 text-xs text-zinc-500">100% free • No sign-up • Updated with latest Punjab rates</p>
+        </div>
+        <div class="md:col-span-5">
+          <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 text-sm">
+            <div class="font-mono text-xs text-violet-400 mb-2">LIVE PREVIEW</div>
+            <div class="space-y-3">
+              <div class="flex justify-between"><span>Property Value</span> <span class="font-medium">Rs 8,500,000</span></div>
+              <div class="flex justify-between text-emerald-400"><span>Purchaser Total</span> <span>Rs 212,500</span></div>
+              <div class="flex justify-between text-emerald-400"><span>Seller Total</span> <span>Rs 382,500</span></div>
+              <div class="pt-3 border-t border-zinc-800 flex justify-between font-semibold"><span>Grand Total</span> <span class="text-violet-400">Rs 595,000</span></div>
+            </div>
+            <div class="mt-4 text-[10px] text-center text-zinc-500">Accurate for Androon / Beron • All filer statuses</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Problem -->
   <section id="problem" class="section max-w-[1280px] mx-auto px-6">
@@ -495,6 +534,13 @@
             <a href="services.html#ai" class="block hover:text-white">AI Development</a>
             <a href="services.html#mvp" class="block hover:text-white">MVP &amp; Prototyping</a>
             <a href="services.html" class="block hover:text-white">All Services</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="font-medium text-xs tracking-widest text-zinc-500 mb-3">TOOLS</div>
+          <div class="space-y-[6px] text-zinc-400">
+            <a href="tax-calculator.html" class="block hover:text-white">Tax Calculator</a>
           </div>
         </div>
 

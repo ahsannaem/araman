@@ -13,7 +13,7 @@
 <body class="bg-zinc-950 text-zinc-100">
 
   <!-- Exact same nav structure as other pages for design consistency -->
-  <nav class="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 z-50">
+  <nav class="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 z-50 relative">
     <div class="max-w-[1280px] mx-auto px-6 py-4 flex justify-between items-center">
       <a href="index.html" class="flex items-center gap-3 text-xl font-bold tracking-tight">
         <img src="assets/logo.svg" alt="" class="h-9 w-auto shrink-0" width="32" height="36">
@@ -51,7 +51,7 @@
       </button>
     </div>
 
-    <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-800 bg-zinc-950 px-6 py-4 flex flex-col gap-4 text-sm">
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 border-t border-zinc-800 bg-zinc-950 px-6 py-4 flex flex-col gap-4 text-sm z-50 shadow-xl">
       <div>
         <button type="button" id="mobile-services-btn" class="nav-link hover:text-violet-400 flex items-center gap-2 w-full text-left">
           Services
@@ -76,8 +76,8 @@
 
   <!-- Page header matching site style -->
   <header class="page-header max-w-[1280px] mx-auto px-6 text-center reveal">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">Graphic Design Mastery</h1>
-    <p class="text-zinc-400 max-w-2xl mx-auto">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Graphic Design Mastery</h1>
+    <p class="text-zinc-400 max-w-2xl mx-auto text-base sm:text-lg">
       From Zero to Professional. Learn Adobe, Figma, Canva &amp; Pro Techniques.
     </p>
   </header>
@@ -93,7 +93,7 @@
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest mb-4 border border-white/20">
               ONLINE
             </div>
-            <h2 class="text-white text-4xl md:text-6xl font-bold tracking-tighter mb-4">Master Graphic Design<br>From Zero to Professional</h2>
+            <h2 class="text-white text-3xl sm:text-4xl md:text-6xl font-bold tracking-tighter mb-4">Master Graphic Design<br>From Zero to Professional</h2>
             <p class="text-lg text-zinc-200 max-w-md mb-6">Build stunning designs in weeks with Adobe, Figma, Canva &amp; professional techniques.</p>
             
             <div class="flex flex-wrap gap-3">
@@ -121,32 +121,32 @@
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-7 card-hover">
+        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-5 sm:p-7 card-hover">
           <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-palette"></i></div>
           <h3 class="font-semibold text-xl mb-2">Design with confidence</h3>
           <p class="text-sm text-zinc-400">From complete beginner to creating polished, professional work you can be proud of.</p>
         </div>
-        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-7 card-hover">
+        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-5 sm:p-7 card-hover">
           <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-tools"></i></div>
           <h3 class="font-semibold text-xl mb-2">Master the full toolkit</h3>
           <p class="text-sm text-zinc-400">Photoshop, Illustrator, InDesign, Figma, Canva, and After Effects used in real studios.</p>
         </div>
-        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-7 card-hover">
+        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-5 sm:p-7 card-hover">
           <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-folder-open"></i></div>
           <h3 class="font-semibold text-xl mb-2">15+ portfolio projects</h3>
           <p class="text-sm text-zinc-400">Build a strong body of work across digital, print, branding, and motion.</p>
         </div>
-        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-7 card-hover">
+        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-5 sm:p-7 card-hover">
           <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-eye"></i></div>
           <h3 class="font-semibold text-xl mb-2">See like a professional</h3>
           <p class="text-sm text-zinc-400">Deep mastery of typography, color, composition, hierarchy, and visual storytelling.</p>
         </div>
-        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-7 card-hover">
+        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-5 sm:p-7 card-hover">
           <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-magic"></i></div>
           <h3 class="font-semibold text-xl mb-2">Work across every medium</h3>
           <p class="text-sm text-zinc-400">UI designs, posters, brand systems, editorial layouts, social, and motion graphics.</p>
         </div>
-        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-7 card-hover">
+        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-5 sm:p-7 card-hover">
           <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-rocket"></i></div>
           <h3 class="font-semibold text-xl mb-2">Pro workflows &amp; speed</h3>
           <p class="text-sm text-zinc-400">Learn efficient techniques and shortcuts used by working designers every day.</p>
@@ -164,32 +164,32 @@
       </div>
 
       <div class="grid md:grid-cols-2 gap-4">
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
           <div class="font-mono text-xs text-violet-400 mb-1">01</div>
           <div class="font-semibold mb-1">Design Foundations</div>
           <div class="text-sm text-zinc-400">Principles, typography, color, composition, grids.</div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
           <div class="font-mono text-xs text-violet-400 mb-1">02</div>
           <div class="font-semibold mb-1">Photoshop Mastery</div>
           <div class="text-sm text-zinc-400">Retouching, compositing, mockups, advanced effects.</div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
           <div class="font-mono text-xs text-violet-400 mb-1">03</div>
           <div class="font-semibold mb-1">Illustrator – Vector Design</div>
           <div class="text-sm text-zinc-400">Logos, icons, illustrations, scalable systems.</div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
           <div class="font-mono text-xs text-violet-400 mb-1">04</div>
           <div class="font-semibold mb-1">Figma for Modern Design</div>
           <div class="text-sm text-zinc-400">UI/UX, components, prototyping, design systems.</div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
           <div class="font-mono text-xs text-violet-400 mb-1">05</div>
           <div class="font-semibold mb-1">Canva Pro Techniques</div>
           <div class="text-sm text-zinc-400">Fast, high-quality output for marketing and social.</div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
           <div class="font-mono text-xs text-violet-400 mb-1">06</div>
           <div class="font-semibold mb-1">InDesign &amp; Layout</div>
           <div class="text-sm text-zinc-400">Editorial, multi-page, print production.</div>
@@ -281,15 +281,15 @@
     <div class="max-w-6xl mx-auto px-6 py-12">
       <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">What students say</h2>
       <div class="grid md:grid-cols-3 gap-5">
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
           <p class="text-sm text-zinc-300">"I had zero design experience. After this course I redesigned our entire marketing materials. The practical projects made all the difference."</p>
           <div class="mt-5 text-sm font-medium">— Maya K., Marketing Designer</div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
           <p class="text-sm text-zinc-300">"The Figma and Illustrator sections alone were worth it. I now have a portfolio that actually gets responses from studios."</p>
           <div class="mt-5 text-sm font-medium">— Jamal R., Junior Designer</div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
           <p class="text-sm text-zinc-300">"Finally a course focused purely on craft and skill. My work improved immediately. Highly recommended."</p>
           <div class="mt-5 text-sm font-medium">— Sofia L., Freelance Designer</div>
         </div>

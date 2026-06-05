@@ -13,7 +13,7 @@
 <body class="bg-zinc-950 text-zinc-100">
 
   <!-- Exact same nav structure as other pages for design consistency -->
-  <nav class="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 z-50">
+  <nav class="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 z-50 relative">
     <div class="max-w-[1280px] mx-auto px-6 py-4 flex justify-between items-center">
       <a href="index.html" class="flex items-center gap-3 text-xl font-bold tracking-tight">
         <img src="assets/logo.svg" alt="" class="h-9 w-auto shrink-0" width="32" height="36">
@@ -51,7 +51,7 @@
       </button>
     </div>
 
-    <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-800 bg-zinc-950 px-6 py-4 flex flex-col gap-4 text-sm">
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 border-t border-zinc-800 bg-zinc-950 px-6 py-4 flex flex-col gap-4 text-sm z-50 shadow-xl">
       <div>
         <button type="button" id="mobile-services-btn" class="nav-link hover:text-violet-400 flex items-center gap-2 w-full text-left">
           Services
@@ -76,8 +76,8 @@
 
   <!-- Page header matching site style -->
   <header class="page-header max-w-[1280px] mx-auto px-6 text-center reveal">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">Freelance Empire</h1>
-    <p class="text-zinc-400 max-w-2xl mx-auto">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Freelance Empire</h1>
+    <p class="text-zinc-400 max-w-2xl mx-auto text-base sm:text-lg">
       Dominate Upwork &amp; Fiverr in 2026 – Land High-Paying Clients Fast
     </p>
   </header>
@@ -93,7 +93,7 @@
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest mb-4 border border-white/20">
               ONLINE • 2026 SYSTEM
             </div>
-            <h2 class="text-white text-4xl md:text-6xl font-bold tracking-tighter mb-4">From Complete Beginner<br>to $3K–$10K/month Freelancer</h2>
+            <h2 class="text-white text-3xl sm:text-4xl md:text-6xl font-bold tracking-tighter mb-4">From Complete Beginner<br>to $3K–$10K/month Freelancer</h2>
             <p class="text-lg text-zinc-200 max-w-md mb-6">Proven no-BS system for 2026 realities. Beat algorithms, AI competition, and land high-ticket clients fast.</p>
             
             <div class="flex flex-wrap gap-3">
@@ -121,32 +121,32 @@
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-7 card-hover">
+        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-5 sm:p-7 card-hover">
           <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-user-check"></i></div>
           <h3 class="font-semibold text-xl mb-2">Top Rated or Level 1+ profile</h3>
           <p class="text-sm text-zinc-400">Build a profile that attracts clients on autopilot with proven 2026 optimization.</p>
         </div>
-        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-7 card-hover">
+        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-5 sm:p-7 card-hover">
           <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-dollar-sign"></i></div>
           <h3 class="font-semibold text-xl mb-2">Consistent high-paying gigs</h3>
           <p class="text-sm text-zinc-400">Win $50–$500+ projects regularly instead of lowball $5–$20 gigs.</p>
         </div>
-        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-7 card-hover">
+        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-5 sm:p-7 card-hover">
           <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-robot"></i></div>
           <h3 class="font-semibold text-xl mb-2">Beat AI and competition</h3>
           <p class="text-sm text-zinc-400">Advanced tricks to stand out in 2026 algorithm and AI spam environment.</p>
         </div>
-        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-7 card-hover">
+        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-5 sm:p-7 card-hover">
           <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-handshake"></i></div>
           <h3 class="font-semibold text-xl mb-2">High-ticket closing system</h3>
           <p class="text-sm text-zinc-400">Move clients to calls, custom offers, and close premium deals consistently.</p>
         </div>
-        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-7 card-hover">
+        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-5 sm:p-7 card-hover">
           <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-sync"></i></div>
           <h3 class="font-semibold text-xl mb-2">Client retention &amp; upselling</h3>
           <p class="text-sm text-zinc-400">Scripts and systems to get 5-star reviews, repeat business, and higher rates.</p>
         </div>
-        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-7 card-hover">
+        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-2xl p-5 sm:p-7 card-hover">
           <div class="text-violet-400 text-2xl mb-4"><i class="fa-solid fa-chart-line"></i></div>
           <h3 class="font-semibold text-xl mb-2">Scale to $5K–$10K+/month</h3>
           <p class="text-sm text-zinc-400">Multiple income streams, rate raises, cross-promotion, and direct client brand.</p>
@@ -164,42 +164,42 @@
       </div>
 
       <div class="grid md:grid-cols-2 gap-4">
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
           <div class="font-mono text-xs text-violet-400 mb-1">00</div>
           <div class="font-semibold mb-1">Mindset &amp; Setup</div>
           <div class="text-sm text-zinc-400">2026 reality check, profitable niche selection, tools, legal &amp; tax setup.</div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
           <div class="font-mono text-xs text-violet-400 mb-1">01</div>
           <div class="font-semibold mb-1">Upwork Deep Dive</div>
           <div class="text-sm text-zinc-400">Profile that ranks, 2026 algorithm hacks, winning proposals, bid strategy.</div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
           <div class="font-mono text-xs text-violet-400 mb-1">02</div>
           <div class="font-semibold mb-1">Fiverr Deep Dive</div>
           <div class="text-sm text-zinc-400">Gig creation &amp; SEO, pricing psychology, images that sell, buyer requests.</div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
           <div class="font-mono text-xs text-violet-400 mb-1">03</div>
           <div class="font-semibold mb-1">Advanced Winning Techniques</div>
           <div class="text-sm text-zinc-400">Psychology, high-ticket closing, communication scripts, account safety.</div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
           <div class="font-mono text-xs text-violet-400 mb-1">04</div>
           <div class="font-semibold mb-1">Content &amp; Delivery Systems</div>
           <div class="text-sm text-zinc-400">Irresistible portfolio, fast workflows, AI leverage, quality control.</div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
           <div class="font-mono text-xs text-violet-400 mb-1">05</div>
           <div class="font-semibold mb-1">Scaling &amp; Multiple Streams</div>
           <div class="text-sm text-zinc-400">Client management, rate raises, cross-promotion, personal brand.</div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
           <div class="font-mono text-xs text-violet-400 mb-1">06</div>
           <div class="font-semibold mb-1">Advanced Growth Hacks 2026</div>
           <div class="text-sm text-zinc-400">Automation, ethical review systems, analytics, platform diversification.</div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
           <div class="font-mono text-xs text-violet-400 mb-1">BONUS</div>
           <div class="font-semibold mb-1">Templates, Contracts &amp; Community</div>
           <div class="text-sm text-zinc-400">Tax optimization, contract templates, case studies, lifetime community.</div>
@@ -288,15 +288,15 @@
     <div class="max-w-6xl mx-auto px-6 py-12">
       <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">What students say</h2>
       <div class="grid md:grid-cols-3 gap-5">
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
           <p class="text-sm text-zinc-300">"I was stuck at $800/month. After applying the proposal and profile hacks, I hit $4,200 in my first full month on Upwork. The 2026 algorithm tricks are gold."</p>
           <div class="mt-5 text-sm font-medium">— Ahmed R., Graphic Designer</div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
           <p class="text-sm text-zinc-300">"The Fiverr gig creation and high-ticket closing scripts changed everything. I now have three premium clients paying $400+ each. No more lowball gigs."</p>
           <div class="mt-5 text-sm font-medium">— Sara M., Video Editor &amp; VA</div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 sm:p-6">
           <p class="text-sm text-zinc-300">"As a complete beginner in AI services, this gave me the exact system to land $5K months. The niche selection and portfolio building modules are unbeatable."</p>
           <div class="mt-5 text-sm font-medium">— Usman K., AI Automation Specialist</div>
         </div>

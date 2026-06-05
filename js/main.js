@@ -58,14 +58,18 @@
   const mobileMenu = document.getElementById('mobile-menu');
 
   if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => {
+    menuBtn.addEventListener('click', (e) => {
+      e.preventDefault();
       mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('mobile-open');
     });
 
     // Close mobile menu when tapping any navigation link inside it.
-    // (Current-page Services button gets its own close handler below when active.)
     mobileMenu.querySelectorAll('a').forEach((el) => {
-      el.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+      el.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('mobile-open');
+      });
     });
   }
 
@@ -114,8 +118,9 @@
   }
 
   // Impressive 3D tilt on premium cards (Apple hardware feel) - desktop only
+  // Skip cards with .no-animate class (e.g. on calculator page)
   if (window.innerWidth > 768) {
-    document.querySelectorAll('.premium-card').forEach(card => {
+    document.querySelectorAll('.premium-card:not(.no-animate)').forEach(card => {
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = ((e.clientX - rect.left) / rect.width) - 0.5;
