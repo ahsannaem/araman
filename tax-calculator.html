@@ -260,17 +260,15 @@
         <div class="premium-card no-animate bg-zinc-900 border border-zinc-800 rounded-3xl p-8 sticky top-24">
           <div class="flex items-start justify-between mb-3">
             <h3 class="font-semibold text-lg" data-lang-key="resultsTitle" data-en="Calculation Results">حساب کے نتائج</h3>
-            <div class="inline-flex items-center rounded-full border border-zinc-700 bg-zinc-900/60 p-0.5 -mt-0.5 -mr-1">
-              <button id="btn-print-results" type="button" onclick="printResults()" disabled class="p-1 rounded-xl text-zinc-500 hover:text-white hover:bg-zinc-800 transition disabled:opacity-50 disabled:cursor-not-allowed" title="پرنٹ کریں" aria-label="Print results">
-                <i class="fa-solid fa-print text-sm w-3.5"></i>
-              </button>
-              <button id="btn-download-image" type="button" onclick="downloadResultsAsImage()" disabled class="p-1 rounded-xl text-zinc-500 hover:text-white hover:bg-zinc-800 transition disabled:opacity-50 disabled:cursor-not-allowed" title="PNG تصویر ڈاؤن لوڈ کریں" aria-label="Download results as image">
-                <i class="fa-solid fa-download text-sm w-3.5"></i>
-              </button>
-              <button id="btn-share-results" type="button" onclick="shareResults()" disabled class="p-1 rounded-xl text-zinc-500 hover:text-white hover:bg-zinc-800 transition disabled:opacity-50 disabled:cursor-not-allowed" title="نتائج شیئر کریں" aria-label="Share results">
-                <i class="fa-solid fa-share-alt text-sm w-3.5"></i>
-              </button>
-            </div>
+            <button id="results-export-btn"
+                    type="button"
+                    class="inline-flex items-center gap-2 px-3.5 py-1.5 text-sm font-medium bg-zinc-900 border border-zinc-700 hover:bg-zinc-800 active:bg-zinc-950 rounded-2xl transition disabled:opacity-60 disabled:cursor-not-allowed"
+                    disabled>
+              <i class="fa-solid fa-share-alt"></i>
+              <span class="hidden sm:inline">Share & Export</span>
+              <span class="sm:hidden">Export</span>
+              <i class="fa-solid fa-chevron-down text-[10px] opacity-60"></i>
+            </button>
           </div>
           
           <div id="out" class="result-box rounded-2xl p-6 text-sm min-h-[220px]">
@@ -285,6 +283,48 @@
             • بیچنے والا اپنا ایف بی آر سی وی ٹی ادا کرتا ہے<br>
             • تعمیراتی قیمت (اگر قابل اطلاق ہو) کل میں شامل کی جاتی ہے۔
           </div>
+        </div>
+      </div>
+
+      <!-- Export Menu (replaces tight three-button group for better mobile UX) -->
+      <div id="export-menu-backdrop" onclick="closeExportMenu()" class="hidden fixed inset-0 bg-black/60 z-[80]"></div>
+      <div id="export-menu" class="hidden fixed bottom-0 left-0 right-0 z-[90] bg-zinc-900 border-t border-zinc-700 rounded-t-3xl shadow-2xl md:max-w-md md:mx-auto md:left-1/2 md:-translate-x-1/2 md:bottom-8 md:rounded-3xl md:border">
+        <div class="p-2">
+          <!-- Mobile drag handle -->
+          <div class="mx-auto my-2 w-10 h-1 bg-zinc-700 rounded-full md:hidden"></div>
+
+          <div class="px-3 py-1 text-[10px] font-medium tracking-[1.5px] text-zinc-400">EXPORT &amp; SHARE</div>
+
+          <button id="menu-action-print" onclick="handleExportAction('print')" class="w-full flex items-center gap-3.5 px-4 py-3.5 text-left hover:bg-zinc-800 active:bg-zinc-950 rounded-2xl transition">
+            <i class="fa-solid fa-print w-5 text-violet-400 text-lg"></i>
+            <div class="flex-1 min-w-0">
+              <div class="font-medium" data-label-ur="پرنٹ کریں" data-label-en="Print">Print</div>
+              <div class="text-xs text-zinc-400" data-desc-ur="پرنٹر یا PDF پر بھیجیں" data-desc-en="Print or save as PDF with branding">Print or save as PDF with branding</div>
+            </div>
+          </button>
+
+          <button id="menu-action-download" onclick="handleExportAction('download')" class="w-full flex items-center gap-3.5 px-4 py-3.5 text-left hover:bg-zinc-800 active:bg-zinc-950 rounded-2xl transition">
+            <i class="fa-solid fa-download w-5 text-violet-400 text-lg"></i>
+            <div class="flex-1 min-w-0">
+              <div class="font-medium" data-label-ur="PNG ڈاؤن لوڈ کریں" data-label-en="Download PNG">Download PNG</div>
+              <div class="text-xs text-zinc-400" data-desc-ur="برینڈنگ کے ساتھ ہائی ریزولوشن تصویر" data-desc-en="High-resolution branded image">High-resolution branded image</div>
+            </div>
+          </button>
+
+          <button id="menu-action-share" onclick="handleExportAction('share')" class="w-full flex items-center gap-3.5 px-4 py-3.5 text-left hover:bg-zinc-800 active:bg-zinc-950 rounded-2xl transition">
+            <i class="fa-solid fa-share-alt w-5 text-violet-400 text-lg"></i>
+            <div class="flex-1 min-w-0">
+              <div class="font-medium" data-label-ur="نتائج شیئر کریں" data-label-en="Share results">Share results</div>
+              <div class="text-xs text-zinc-400" data-desc-ur="ٹیکسٹ کاپی + واٹس ایپ کھولیں" data-desc-en="Copy text + open WhatsApp">Copy text + open WhatsApp</div>
+            </div>
+          </button>
+        </div>
+
+        <div class="px-4 py-3 border-t border-zinc-800">
+          <button onclick="closeExportMenu()" 
+                  class="w-full py-3 text-sm font-medium text-zinc-300 hover:text-white active:text-zinc-400 transition">
+            Cancel
+          </button>
         </div>
       </div>
 
@@ -555,13 +595,10 @@
       // Update select option texts for bilingual
       updateSelectOptions(lang);
 
-      // Refresh share/print button titles for current language
-      const btnPrint = document.getElementById('btn-print-results');
-      if (btnPrint) btnPrint.title = translations[lang].printResults || btnPrint.title;
-      const btnDownload = document.getElementById('btn-download-image');
-      if (btnDownload) btnDownload.title = translations[lang].downloadImage || btnDownload.title;
-      const btnShare = document.getElementById('btn-share-results');
-      if (btnShare) btnShare.title = translations[lang].shareResults || btnShare.title;
+      // Update export menu labels when language changes
+      if (typeof updateExportMenuLabels === 'function') {
+        updateExportMenuLabels();
+      }
     }
 
   function updateSelectOptions(lang) {
@@ -732,11 +769,9 @@
 
       document.getElementById('out').innerHTML = html;
 
-      // Enable the share/print buttons now that we have results
-      ['btn-print-results', 'btn-download-image', 'btn-share-results'].forEach(id => {
-        const b = document.getElementById(id);
-        if (b) b.disabled = false;
-      });
+      // Enable the main export button now that we have results
+      const exportBtn = document.getElementById('results-export-btn');
+      if (exportBtn) exportBtn.disabled = false;
 
       // On mobile: smoothly & slowly scroll down to reveal the results card.
       // This gives nice animated UX after the user taps "Calculate".
@@ -984,6 +1019,161 @@
 
       return canvas;
     }
+
+    // === New single-button Export Menu (much better mobile UX) ===
+    function openExportMenu() {
+      const backdrop = document.getElementById('export-menu-backdrop');
+      const menu = document.getElementById('export-menu');
+      if (!backdrop || !menu) return;
+
+      menu.classList.remove('hidden');
+      menu.classList.add('block');
+
+      // Show backdrop only on mobile for the sheet experience.
+      // On desktop we show a clean popover without full-screen dim.
+      if (window.innerWidth < 768) {
+        backdrop.classList.remove('hidden');
+        backdrop.classList.add('block');
+      } else {
+        backdrop.classList.remove('block');
+        backdrop.classList.add('hidden');
+      }
+
+      // On desktop, position the menu as a proper right-aligned dropdown below the button
+      if (window.innerWidth >= 768) {
+        const btn = document.getElementById('results-export-btn');
+        if (btn) {
+          const rect = btn.getBoundingClientRect();
+          const menuWidth = 280;
+
+          // Right-align the menu with the button's right edge (standard for "more actions" / export menus)
+          let left = rect.right - menuWidth;
+
+          // Keep from going off the left of the viewport
+          if (left < 16) left = 16;
+
+          // Also ensure it doesn't overflow the right edge (rare but safe)
+          const maxLeft = window.innerWidth - menuWidth - 16;
+          if (left > maxLeft) left = Math.max(16, maxLeft);
+
+          menu.style.position = 'fixed';
+          menu.style.top = `${rect.bottom + 10}px`;
+          menu.style.left = `${left}px`;
+          menu.style.right = 'auto';
+          menu.style.bottom = 'auto';
+          menu.style.width = `${menuWidth}px`;
+          menu.style.maxWidth = 'none';
+          menu.style.transform = 'none';
+          menu.style.margin = '0';
+          menu.style.boxShadow = '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)';
+        }
+      }
+    }
+
+    function closeExportMenu() {
+      const backdrop = document.getElementById('export-menu-backdrop');
+      const menu = document.getElementById('export-menu');
+      if (!backdrop || !menu) return;
+
+      backdrop.classList.remove('block');
+      backdrop.classList.add('hidden');
+
+      menu.classList.remove('block');
+      menu.classList.add('hidden');
+
+      // reset desktop positioning
+      menu.style.position = '';
+      menu.style.top = '';
+      menu.style.left = '';
+      menu.style.right = '';
+      menu.style.bottom = '';
+      menu.style.width = '';
+      menu.style.maxWidth = '';
+      menu.style.transform = '';
+      menu.style.margin = '';
+    }
+
+    function handleExportAction(action) {
+      closeExportMenu();
+
+      // Small delay so the menu closes visually before the action
+      setTimeout(() => {
+        if (action === 'print') {
+          printResults();
+        } else if (action === 'download') {
+          downloadResultsAsImage();
+        } else if (action === 'share') {
+          shareResults();
+        }
+      }, 60);
+    }
+
+    function updateExportMenuLabels() {
+      const lang = currentLang || 'ur';
+      const isUr = lang === 'ur';
+
+      const actions = [
+        { id: 'menu-action-print' },
+        { id: 'menu-action-download' },
+        { id: 'menu-action-share' }
+      ];
+
+      actions.forEach(({ id }) => {
+        const btn = document.getElementById(id);
+        if (!btn) return;
+
+        const labelEl = btn.querySelector('[data-label-ur]');
+        const descEl = btn.querySelector('[data-desc-ur]');
+
+        if (labelEl) {
+          labelEl.textContent = isUr ? labelEl.dataset.labelUr : labelEl.dataset.labelEn;
+        }
+        if (descEl) {
+          descEl.textContent = isUr ? descEl.dataset.descUr : descEl.dataset.descEn;
+        }
+      });
+    }
+
+    // Wire the main export button
+    document.addEventListener('DOMContentLoaded', () => {
+      const exportBtn = document.getElementById('results-export-btn');
+      if (exportBtn) {
+        exportBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (!exportBtn.disabled) {
+            openExportMenu();
+          }
+        });
+      }
+
+      // Close menu on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          const menu = document.getElementById('export-menu');
+          if (menu && !menu.classList.contains('hidden')) {
+            closeExportMenu();
+          }
+        }
+      });
+
+      // Close menu when clicking outside (important for desktop popover)
+      document.addEventListener('click', (e) => {
+        const menu = document.getElementById('export-menu');
+        const btn = document.getElementById('results-export-btn');
+        if (!menu || menu.classList.contains('hidden')) return;
+
+        const target = e.target;
+        if (menu.contains(target) || (btn && btn.contains(target))) {
+          return; // clicked inside menu or on the trigger button
+        }
+        closeExportMenu();
+      }, true); // use capture to catch early
+
+      // Initial bilingual labels for the export menu
+      if (typeof updateExportMenuLabels === 'function') {
+        updateExportMenuLabels();
+      }
+    });
 
     async function downloadResultsAsImage() {
       try {
