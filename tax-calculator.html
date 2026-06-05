@@ -716,15 +716,19 @@
       let text = title + '\n' + new Date().toLocaleString(currentLang === 'ur' ? 'ur-PK' : undefined) + '\n\n';
       text += outEl.innerText.trim() + '\n\n';
       if (currentLang === 'ur') {
-        text += 'یہ نتائج آرمان کمپیوٹرز کے مفت ٹیکس کیلکولیٹر سے ہیں۔\n' +
+        text += 'یہ نتائج آرمان کمپیوٹرز کے مفت ٹیکس کیلکولیٹر سے ہیں۔\n\n' +
+                'رابطہ کریں:\n' +
                 'مکتبہ مرکزی: آفس نمبر 57، ال یقین ٹریڈ سنٹر، بوریوالہ\n' +
                 'شاخ: ال بہا، دبا روڈ، فجیرہ E89\n' +
-                'ای میل: iarmancomputers@gmail.com | واٹس ایپ: 0300-6991759';
+                'ای میل: iarmancomputers@gmail.com\n' +
+                'واٹس ایپ: +92 300 6991759';
       } else {
-        text += 'Generated with Arman Computers free Tax Calculator.\n' +
+        text += 'Generated with Arman Computers free Tax Calculator.\n\n' +
+                'Contact Us:\n' +
                 'Head Office: Office No. 57, Al-Yaqeen Trade Center, Burewala\n' +
                 'Branch: Al Baha, Dibba Road, Fujairah E89\n' +
-                'Email: iarmancomputers@gmail.com | WhatsApp: 0300-6991759';
+                'Email: iarmancomputers@gmail.com\n' +
+                'WhatsApp: +92 300 6991759';
       }
       return text;
     }
@@ -747,41 +751,61 @@
       canvas.width = W;
       canvas.height = H;
 
-      // Dark background (match site theme)
-      ctx.fillStyle = '#111113';
+      // White background for printer-friendly / low-ink output
+      // (dark theme was using too much ink on print)
+      ctx.fillStyle = '#ffffff';
       ctx.fillRect(0, 0, W, H);
 
-      // Top branding bar
-      ctx.fillStyle = '#18181b';
-      ctx.fillRect(0, 0, W, 85);
+      // Thin top accent bar for Arman branding (violet)
+      ctx.fillStyle = '#a78bfa';
+      ctx.fillRect(0, 0, W, 6);
+
+      // Set direction for proper RTL text rendering when Urdu
+      ctx.direction = isUr ? 'rtl' : 'ltr';
 
       // Arman Computers logo text (no external image = no taint)
-      ctx.fillStyle = '#f4f4f5';
+      // Position block on right for RTL, keep brand name LTR shaped
+      ctx.textAlign = isUr ? 'right' : 'left';
+      const brandX = isUr ? (W - 36) : 36;
+      ctx.fillStyle = '#111827';
       ctx.font = 'bold 26px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-      ctx.fillText('Arman ', 36, 42);
-      ctx.fillStyle = '#a78bfa';
-      ctx.fillText('Computers', 36 + ctx.measureText('Arman ').width, 42);
+      if (isUr) {
+        const fullW = ctx.measureText('Arman Computers').width;
+        ctx.fillText('Arman ', brandX - fullW, 42);
+        ctx.fillStyle = '#7c3aed';
+        ctx.fillText('Computers', brandX - fullW + ctx.measureText('Arman ').width, 42);
+      } else {
+        ctx.fillText('Arman ', brandX, 42);
+        ctx.fillStyle = '#7c3aed';
+        ctx.fillText('Computers', brandX + ctx.measureText('Arman ').width, 42);
+      }
 
-      // Subtitle
-      ctx.fillStyle = '#71717a';
+      // Subtitle - right aligned for RTL
+      ctx.fillStyle = '#4b5563';
       ctx.font = '13px system-ui, sans-serif';
+      ctx.textAlign = isUr ? 'right' : 'left';
+      const subX = isUr ? (W - 36) : 36;
       const sub = isUr ? 'مفت ٹیکس کیلکولیٹر • پنجاب، پاکستان' : 'Free Tax Calculator • Punjab, Pakistan';
-      ctx.fillText(sub, 36, 64);
+      ctx.fillText(sub, subX, 64);
 
-      // Date top-right
-      ctx.fillStyle = '#52525b';
+      // Date top-right (for RTL put on left/visual end)
+      ctx.fillStyle = '#6b7280';
       ctx.font = '11px system-ui';
+      ctx.textAlign = isUr ? 'left' : 'right';
+      const dateX = isUr ? 36 : (W - 36);
       const dateStr = new Date().toLocaleDateString() + '  ' + new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
-      ctx.fillText(dateStr, W - 36 - ctx.measureText(dateStr).width, 42);
+      ctx.fillText(dateStr, dateX, 42);
 
-      // Main title
-      ctx.fillStyle = '#e4e4e7';
+      // Main title - right aligned for RTL
+      ctx.fillStyle = '#1f2937';
       ctx.font = 'bold 20px system-ui';
+      ctx.textAlign = isUr ? 'right' : 'left';
+      const titleX = isUr ? (W - 36) : 36;
       const mainTitle = isUr ? 'ٹیکس کیلکولیشن کے نتائج' : 'Tax Calculation Results';
-      ctx.fillText(mainTitle, 36, 120);
+      ctx.fillText(mainTitle, titleX, 120);
 
       // Subtle divider
-      ctx.strokeStyle = '#27272a';
+      ctx.strokeStyle = '#e5e7eb';
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.moveTo(36, 138);
@@ -794,15 +818,28 @@
       const right = W - 36;
       const rowH = 34;
 
-      function row(label, val) {
-        ctx.fillStyle = '#a1a1aa';
-        ctx.font = '15px system-ui';
-        ctx.fillText(label, left, y);
+      let labelX = left;
+      let valueX = right;
+      let labelAlign = 'left';
+      let valueAlign = 'right';
+      if (isUr) {
+        labelX = right;
+        valueX = left + 300;  // value column (right-aligned at this x for RTL layout)
+        labelAlign = 'right';
+        valueAlign = 'right';
+      }
 
-        ctx.fillStyle = '#f4f4f5';
+      function row(label, val) {
+        ctx.textAlign = labelAlign;
+        ctx.fillStyle = '#4b5563';
+        ctx.font = '15px system-ui';
+        ctx.fillText(label, labelX, y);
+
+        ctx.textAlign = valueAlign;
+        ctx.fillStyle = '#111827';
         ctx.font = '600 15px system-ui';
         const v = 'Rs ' + val.toLocaleString();
-        ctx.fillText(v, right - ctx.measureText(v).width, y);
+        ctx.fillText(v, valueX, y);
         y += rowH;
       }
 
@@ -821,26 +858,33 @@
 
       // Strong divider before total
       y += 8;
-      ctx.strokeStyle = '#3f3f46';
+      ctx.strokeStyle = '#d1d5db';
+      ctx.lineWidth = 1.5;
       ctx.beginPath();
       ctx.moveTo(left, y);
       ctx.lineTo(right, y);
       ctx.stroke();
+      ctx.lineWidth = 1;
       y += 28;
 
       // Grand total - prominent
-      ctx.fillStyle = '#a78bfa';
+      ctx.textAlign = isUr ? 'right' : 'left';
+      ctx.fillStyle = '#7c3aed';
       ctx.font = '600 18px system-ui';
-      ctx.fillText( isUr ? 'کل قابل ادائیگی' : 'Grand Total Payable', left, y );
+      const grandLabelX = isUr ? right : left;
+      ctx.fillText( isUr ? 'کل قابل ادائیگی' : 'Grand Total Payable', grandLabelX, y );
 
       ctx.font = 'bold 26px system-ui';
       const grandStr = 'Rs ' + d.grand.toLocaleString();
-      ctx.fillText(grandStr, right - ctx.measureText(grandStr).width, y );
+      ctx.textAlign = isUr ? 'right' : 'right';
+      ctx.fillText(grandStr, valueX, y );
       y += 48;
 
       // Who pays note (clean version)
-      ctx.fillStyle = '#71717a';
+      ctx.fillStyle = '#6b7280';
       ctx.font = '13px system-ui';
+      ctx.textAlign = isUr ? 'right' : 'left';
+      const noteX = isUr ? right : left;
       const notes = isUr
         ? [
             '• خریدار: سٹامپ ڈیوٹی (1%) + بلدیہ (1%) + اپنا FBR CVT',
@@ -854,38 +898,41 @@
           ];
 
       notes.forEach(n => {
-        ctx.fillText(n, left, y);
+        ctx.fillText(n, noteX, y);
         y += 20;
       });
 
       // Footer ad (strong branding for free advertisement) - now includes full contact details
       y += 20;
-      ctx.strokeStyle = '#27272a';
+      ctx.strokeStyle = '#e5e7eb';
       ctx.beginPath();
       ctx.moveTo(left, y);
       ctx.lineTo(right, y);
       ctx.stroke();
       y += 24;
 
-      ctx.fillStyle = '#a1a1aa';
+      ctx.fillStyle = '#7c3aed';
       ctx.font = 'bold 13px system-ui';
-      ctx.fillText('Arman Computers', left, y);
+      ctx.textAlign = isUr ? 'right' : 'left';
+      const footerX = isUr ? right : left;
+      ctx.fillText('Arman Computers', footerX, y);
 
+      ctx.fillStyle = '#4b5563';
       ctx.font = '11px system-ui';
       y += 17;
 
       if (isUr) {
-        ctx.fillText('مکتبہ مرکزی: آفس نمبر 57، ال یقین ٹریڈ سنٹر، بوریوالہ', left, y);
+        ctx.fillText('مکتبہ مرکزی: آفس نمبر 57، ال یقین ٹریڈ سنٹر، بوریوالہ', footerX, y);
         y += 15;
-        ctx.fillText('شاخ: ال بہا، دبا روڈ، فجیرہ E89', left, y);
+        ctx.fillText('شاخ: ال بہا، دبا روڈ، فجیرہ E89', footerX, y);
         y += 15;
-        ctx.fillText('ای میل: iarmancomputers@gmail.com  •  واٹس ایپ: 0300-6991759', left, y);
+        ctx.fillText('ای میل: iarmancomputers@gmail.com  •  واٹس ایپ: +92 300 6991759', footerX, y);
       } else {
-        ctx.fillText('Head Office: Office No. 57, Al-Yaqeen Trade Center, Burewala', left, y);
+        ctx.fillText('Head Office: Office No. 57, Al-Yaqeen Trade Center, Burewala', footerX, y);
         y += 15;
-        ctx.fillText('Branch: Al Baha, Dibba Road, Fujairah E89', left, y);
+        ctx.fillText('Branch: Al Baha, Dibba Road, Fujairah E89', footerX, y);
         y += 15;
-        ctx.fillText('Email: iarmancomputers@gmail.com  •  WhatsApp: 0300-6991759', left, y);
+        ctx.fillText('Email: iarmancomputers@gmail.com  •  WhatsApp: +92 300 6991759', footerX, y);
       }
 
       return canvas;
@@ -922,12 +969,12 @@
             <meta charset="utf-8">
             <title>Arman Computers - Tax Calculation Results</title>
             <style>
-              body { margin:0; padding:20px; background:#f8f8f8; font-family:system-ui; display:flex; flex-direction:column; align-items:center; }
-              img { max-width:100%; height:auto; border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,.15); }
+              body { margin:0; padding:20px; background:white; font-family:system-ui; display:flex; flex-direction:column; align-items:center; }
+              img { max-width:100%; height:auto; border:1px solid #e5e7eb; border-radius:6px; }
               .footer-note { margin-top:12px; font-size:11px; color:#666; text-align:center; }
               @media print {
-                body { background:white; padding:0; }
-                img { box-shadow:none; max-width:100%; width:100%; }
+                body { background:white; padding:0; margin:0; }
+                img { border:none; box-shadow:none; max-width:100%; width:100%; border-radius:0; }
                 .footer-note { display:none; }
               }
             </style>
