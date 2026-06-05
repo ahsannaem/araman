@@ -13,7 +13,7 @@
 <body class="bg-zinc-950 text-zinc-100">
 
   <nav class="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 z-50">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="max-w-[1280px] mx-auto px-6 py-4 flex justify-between items-center">
       <a href="index.html" class="flex items-center gap-3 text-xl font-bold tracking-tight">
         <img src="assets/logo.svg" alt="" class="h-9 w-auto shrink-0" width="32" height="36">
         <span>Arman <span class="text-violet-400">Computers</span></span>
@@ -35,13 +35,14 @@
             <a href="services.html" class="nav-dropdown-item nav-dropdown-all" role="menuitem">View all services</a>
           </div>
         </div>
+        <a href="index.html#solutions" class="nav-link hover:text-violet-400">Solutions</a>
         <a href="courses.html" class="nav-link active hover:text-violet-400">Courses</a>
         <a href="index.html#about" class="nav-link hover:text-violet-400">About</a>
         <a href="contact.html" class="nav-link hover:text-violet-400">Contact</a>
       </div>
 
       <a href="contact.html" class="hidden md:inline-block px-5 py-2 text-sm font-medium bg-violet-600 rounded-xl hover:bg-violet-500 transition">
-        Get started
+        Book a Consultation
       </a>
 
       <button id="menu-btn" type="button" class="md:hidden text-2xl text-zinc-300" aria-label="Open menu">
@@ -65,16 +66,18 @@
           <a href="services.html" class="text-violet-400">View all services</a>
         </div>
       </div>
+      <a href="index.html#solutions" class="nav-link hover:text-violet-400">Solutions</a>
       <a href="courses.html" class="nav-link active hover:text-violet-400">Courses</a>
       <a href="index.html#about" class="nav-link hover:text-violet-400">About</a>
       <a href="contact.html" class="nav-link hover:text-violet-400">Contact</a>
     </div>
   </nav>
 
-  <header class="page-header max-w-6xl mx-auto px-6 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">Courses</h1>
-    <p class="text-zinc-400 max-w-2xl mx-auto">
-      Online and onsite training for teams that ship.
+  <header class="page-header max-w-[1280px] mx-auto px-6 text-center">
+    <div class="text-violet-400 text-xs tracking-[3px] font-medium mb-3">SKILL UP</div>
+    <h1 class="text-5xl md:text-[52px] font-bold tracking-[-1.8px] mb-4">Courses built by people who actually ship.</h1>
+    <p class="text-xl text-zinc-400 max-w-2xl mx-auto">
+      Practical systems and playbooks from teams building real products.
     </p>
   </header>
 
@@ -83,14 +86,14 @@
       <div class="flex items-end justify-between mb-8">
         <div>
           <h2 class="text-3xl font-semibold tracking-tight">Featured Courses</h2>
-          <p class="text-zinc-400 mt-1">Start building real creative skills today.</p>
+          <p class="text-zinc-400 mt-1">Learn by building what actually ships.</p>
         </div>
         <a href="contact.html" class="hidden md:inline text-sm text-violet-400 hover:text-violet-300 transition">Get in touch →</a>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Graphic Design Mastery Tile -->
-        <a href="graphic-design-mastery.html" class="group block bg-zinc-900 border border-zinc-800 hover:border-violet-500/60 rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-violet-950/50">
+        <a href="graphic-design-mastery.html" class="reveal group block bg-zinc-900 border border-zinc-800 hover:border-violet-500/60 rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-violet-950/50">
           <div class="relative h-56 overflow-hidden">
             <img src="assets/graphic-design.png" alt="Graphic Design Mastery: From Zero to Professional – student work showcase" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500">
             <div class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -115,7 +118,7 @@
         </a>
 
         <!-- Freelance Empire Tile -->
-        <a href="freelance-empire.html" class="group block bg-zinc-900 border border-zinc-800 hover:border-violet-500/60 rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-violet-950/50">
+        <a href="freelance-empire.html" class="reveal delay-1 group block bg-zinc-900 border border-zinc-800 hover:border-violet-500/60 rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-violet-950/50">
           <div class="relative h-56 overflow-hidden">
             <img src="assets/generated/freelance-hero.jpg" alt="Freelance Empire: Dominate Upwork & Fiverr in 2026 – confident freelancer landing high-paying clients" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500">
             <div class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -140,7 +143,7 @@
         </a>
 
         <!-- Future course placeholder -->
-        <div class="group flex flex-col justify-center bg-zinc-900/50 border border-zinc-800/60 rounded-3xl p-8 text-center opacity-60">
+        <div class="reveal delay-2 group flex flex-col justify-center bg-zinc-900/50 border border-zinc-800/60 rounded-3xl p-8 text-center opacity-60">
           <div class="mx-auto mb-4 w-12 h-12 rounded-2xl bg-zinc-800 flex items-center justify-center">
             <i class="fa-solid fa-plus text-xl text-zinc-500"></i>
           </div>
@@ -153,20 +156,48 @@
     </div>
   </section>
 
-  <footer class="py-12 text-center text-zinc-500 border-t border-zinc-800 text-sm">
-    <div class="flex flex-col items-center gap-4">
-      <div class="flex items-center gap-6">
-        <a href="https://www.facebook.com/armancomputersandprinters/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-zinc-400 hover:text-violet-400 transition">
-          <i class="fa-brands fa-facebook-f text-xl"></i>
-        </a>
-        <a href="https://www.instagram.com/iarmancomputers/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-zinc-400 hover:text-violet-400 transition">
-          <i class="fa-brands fa-instagram text-xl"></i>
-        </a>
-        <a href="https://x.com/iarmancomputers" target="_blank" rel="noopener noreferrer" aria-label="X" class="text-zinc-400 hover:text-violet-400 transition">
-          <i class="fa-brands fa-x-twitter text-xl"></i>
-        </a>
+  <footer class="border-t border-zinc-800 pt-14 pb-10 text-sm">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-y-10">
+        <div class="col-span-2 md:col-span-1">
+          <a href="index.html" class="flex items-center gap-2 font-semibold text-lg">
+            <img src="assets/logo.svg" alt="" class="h-7 w-auto"> Arman Computers
+          </a>
+          <p class="mt-3 text-xs text-zinc-500">Building software that actually ships.</p>
+        </div>
+
+        <div>
+          <div class="font-medium text-xs tracking-widest text-zinc-500 mb-3">COMPANY</div>
+          <div class="space-y-[6px] text-zinc-400">
+            <a href="index.html#about" class="block hover:text-white">About</a>
+            <a href="contact.html" class="block hover:text-white">Contact</a>
+            <a href="services.html" class="block hover:text-white">Services</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="font-medium text-xs tracking-widest text-zinc-500 mb-3">LEARNING</div>
+          <div class="space-y-[6px] text-zinc-400">
+            <a href="#featured" class="block hover:text-white">Featured Courses</a>
+            <a href="graphic-design-mastery.html" class="block hover:text-white">Graphic Design Mastery</a>
+            <a href="freelance-empire.html" class="block hover:text-white">Freelance Empire</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="font-medium text-xs tracking-widest text-zinc-500 mb-3">CONNECT</div>
+          <div class="space-y-[6px] text-zinc-400">
+            <a href="https://x.com/iarmancomputers" target="_blank" class="block hover:text-white">X</a>
+            <a href="https://www.instagram.com/iarmancomputers/" target="_blank" class="block hover:text-white">Instagram</a>
+            <a href="https://www.facebook.com/armancomputersandprinters/" target="_blank" class="block hover:text-white">Facebook</a>
+          </div>
+        </div>
+
+        <div class="md:text-right col-span-2 md:col-span-1">
+          <div class="text-xs text-zinc-500">© 2026 Arman Computers</div>
+          <div class="mt-1 text-xs text-zinc-500">Lahore &amp; Fujairah</div>
+        </div>
       </div>
-      <p>&copy; 2026 Arman Computers</p>
     </div>
   </footer>
 

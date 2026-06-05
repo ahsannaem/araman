@@ -13,7 +13,7 @@
 <body class="bg-zinc-950 text-zinc-100">
 
   <nav class="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 z-50">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="max-w-[1280px] mx-auto px-6 py-4 flex justify-between items-center">
       <a href="index.html" class="flex items-center gap-3 text-xl font-bold tracking-tight">
         <img src="assets/logo.svg" alt="" class="h-9 w-auto shrink-0" width="32" height="36">
         <span>Arman <span class="text-violet-400">Computers</span></span>
@@ -35,13 +35,14 @@
             <a href="services.html" class="nav-dropdown-item nav-dropdown-all" role="menuitem">View all services</a>
           </div>
         </div>
+        <a href="index.html#solutions" class="nav-link hover:text-violet-400">Solutions</a>
         <a href="courses.html" class="nav-link hover:text-violet-400">Courses</a>
         <a href="index.html#about" class="nav-link hover:text-violet-400">About</a>
         <a href="contact.html" class="nav-link active hover:text-violet-400">Contact</a>
       </div>
 
-      <a href="services.html" class="hidden md:inline-block px-5 py-2 text-sm font-medium bg-violet-600 rounded-xl hover:bg-violet-500 transition">
-        Explore services
+      <a href="#consultation-form" class="hidden md:inline-block px-5 py-2 text-sm font-medium bg-violet-600 rounded-xl hover:bg-violet-500 transition">
+        Book a Consultation
       </a>
 
       <button id="menu-btn" type="button" class="md:hidden text-2xl text-zinc-300" aria-label="Open menu">
@@ -65,6 +66,7 @@
           <a href="services.html" class="text-violet-400">View all services</a>
         </div>
       </div>
+      <a href="index.html#solutions" class="nav-link hover:text-violet-400">Solutions</a>
       <a href="courses.html" class="nav-link hover:text-violet-400">Courses</a>
       <a href="index.html#about" class="nav-link hover:text-violet-400">About</a>
       <a href="contact.html" class="nav-link active hover:text-violet-400">Contact</a>
@@ -73,23 +75,21 @@
 
   <!-- Hero -->
   <div class="pt-24 pb-16 border-b border-zinc-800">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-medium tracking-widest text-violet-400 mb-6">
-        <i class="fa-solid fa-comments"></i>
+    <div class="max-w-[1280px] mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-medium tracking-[2px] text-violet-400 mb-6">
         <span>WE'RE READY TO TALK</span>
       </div>
-      <h1 class="text-5xl md:text-6xl font-bold tracking-tighter leading-none mb-6">
-        Let's Build the<br>Future Together
+      <h1 class="text-5xl md:text-[56px] font-bold tracking-[-2.5px] leading-none mb-6">
+        Let’s build something<br>exceptional together.
       </h1>
       <p class="text-xl md:text-2xl text-zinc-400 max-w-2xl mx-auto mb-10">
-        Connect with our team. Whether you're launching an MVP, adding AI capabilities, or scaling your SaaS — we're here to help you ship with confidence.
+        Whether you’re launching an MVP, adding serious AI capabilities, or scaling an existing platform — we’re here to help.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="#consultation-form"
-           class="inline-flex items-center justify-center gap-3 px-10 py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-3xl text-lg font-semibold hover:scale-[1.02] transition-all shadow-lg hover:shadow-xl">
-          <i class="fa-solid fa-envelope"></i>
-          <span>Request a Consultation</span>
+           class="inline-flex items-center justify-center gap-3 px-10 py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-3xl text-lg font-semibold hover:scale-[1.01] transition-all shadow-lg hover:shadow-xl">
+          Request a Consultation
         </a>
         <a href="https://wa.me/923006991759?text=Hi%20Arman%20Computers%2C%20I%27d%20like%20to%20schedule%20a%20strategy%20call."
            target="_blank" rel="noopener noreferrer"
@@ -108,7 +108,7 @@
       
       <!-- Form -->
       <div class="lg:col-span-3" id="consultation-form">
-        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 md:p-10">
+        <div class="premium-card reveal bg-zinc-900 rounded-3xl p-8 md:p-10">
           <div class="mb-8">
             <h2 class="text-3xl font-semibold tracking-tight">Request a Consultation</h2>
             <p class="text-zinc-400 mt-2">Tell us about your project. We'll get back to you within one business day.</p>
@@ -261,7 +261,7 @@
 
       <!-- Contact Info Sidebar -->
       <div class="lg:col-span-2 space-y-6">
-        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+        <div class="premium-card reveal delay-1 bg-zinc-900 rounded-3xl p-8">
           <h3 class="font-semibold text-xl mb-6 tracking-tight">Get In Touch</h3>
           
           <div class="space-y-6 text-sm">
@@ -304,7 +304,7 @@
         </div>
 
         <!-- Quick facts -->
-        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 text-sm">
+        <div class="premium-card reveal delay-2 bg-zinc-900 rounded-3xl p-8 text-sm">
           <div class="uppercase tracking-[2px] text-xs text-violet-400 font-medium mb-3">WHAT TO EXPECT</div>
           <div class="space-y-2.5 text-zinc-300">
             <div class="flex items-start gap-3"><i class="fa-solid fa-check text-violet-400 mt-1 text-sm"></i> <span>We review your details within hours</span></div>
@@ -327,7 +327,7 @@
 
       <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
         <!-- Main Head Office - text only -->
-        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+        <div class="premium-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
           <div class="uppercase tracking-widest text-xs text-violet-400 mb-2">MAIN HEAD OFFICE</div>
           <div class="font-semibold text-lg leading-tight">Office No. 57, Al Yaqeen Trade Center</div>
           <div class="text-zinc-400 mt-1">Burewala, Pakistan</div>
@@ -338,7 +338,7 @@
         </div>
 
         <!-- Second office with map -->
-        <div>
+        <div class="premium-card reveal delay-1">
           <div class="uppercase tracking-widest text-xs text-violet-400 mb-2">REGIONAL OFFICE</div>
           <div class="font-semibold text-lg leading-tight mb-1">Al Baha Dibba Road Fujhirha E89</div>
           <div class="text-zinc-400 text-sm mb-4">Fujairah, United Arab Emirates</div>
@@ -371,20 +371,47 @@
     </div>
   </div>
 
-  <footer class="py-12 text-center text-zinc-500 border-t border-zinc-800 text-sm">
-    <div class="flex flex-col items-center gap-4">
-      <div class="flex items-center gap-6">
-        <a href="https://www.facebook.com/armancomputersandprinters/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-zinc-400 hover:text-violet-400 transition">
-          <i class="fa-brands fa-facebook-f text-xl"></i>
-        </a>
-        <a href="https://www.instagram.com/iarmancomputers/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-zinc-400 hover:text-violet-400 transition">
-          <i class="fa-brands fa-instagram text-xl"></i>
-        </a>
-        <a href="https://x.com/iarmancomputers" target="_blank" rel="noopener noreferrer" aria-label="X" class="text-zinc-400 hover:text-violet-400 transition">
-          <i class="fa-brands fa-x-twitter text-xl"></i>
-        </a>
+  <footer class="border-t border-zinc-800 pt-14 pb-10 text-sm">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-y-10">
+        <div class="col-span-2 md:col-span-1">
+          <a href="index.html" class="flex items-center gap-2 font-semibold text-lg">
+            <img src="assets/logo.svg" alt="" class="h-7 w-auto"> Arman Computers
+          </a>
+          <p class="mt-3 text-xs text-zinc-500">Building software that actually ships.</p>
+        </div>
+
+        <div>
+          <div class="font-medium text-xs tracking-widest text-zinc-500 mb-3">COMPANY</div>
+          <div class="space-y-[6px] text-zinc-400">
+            <a href="index.html#about" class="block hover:text-white">About</a>
+            <a href="services.html" class="block hover:text-white">Services</a>
+            <a href="courses.html" class="block hover:text-white">Courses</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="font-medium text-xs tracking-widest text-zinc-500 mb-3">RESOURCES</div>
+          <div class="space-y-[6px] text-zinc-400">
+            <a href="contact.html" class="block hover:text-white">Contact</a>
+            <a href="index.html#solutions" class="block hover:text-white">Solutions</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="font-medium text-xs tracking-widest text-zinc-500 mb-3">CONNECT</div>
+          <div class="space-y-[6px] text-zinc-400">
+            <a href="https://x.com/iarmancomputers" target="_blank" class="block hover:text-white">X</a>
+            <a href="https://www.instagram.com/iarmancomputers/" target="_blank" class="block hover:text-white">Instagram</a>
+            <a href="https://www.facebook.com/armancomputersandprinters/" target="_blank" class="block hover:text-white">Facebook</a>
+          </div>
+        </div>
+
+        <div class="md:text-right col-span-2 md:col-span-1">
+          <div class="text-xs text-zinc-500">© 2026 Arman Computers</div>
+          <div class="mt-1 text-xs text-zinc-500">Lahore &amp; Fujairah</div>
+        </div>
       </div>
-      <p>&copy; 2026 Arman Computers</p>
     </div>
   </footer>
 
