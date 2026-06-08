@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arman Computers - Integrated business enablement and technology partner. Business formation, documentation, compliance, and custom software in Pakistan & UAE.">
+  <title>About Us | Arman Computers</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+
+  <!-- Navigation (unchanged) -->
+  <nav class="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 z-50 relative">
+    <div class="max-w-[1280px] mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3 text-xl font-bold tracking-tight">
+        <img src="assets/logo.svg" alt="" class="h-9 w-auto shrink-0" width="32" height="36">
+        <span>Arman <span class="text-violet-400">Computers</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <div class="nav-dropdown">
+          <a href="services.html" class="nav-link hover:text-violet-400 inline-flex items-center gap-1.5">
+            Services
+            <i class="fa-solid fa-chevron-down text-[10px] opacity-60"></i>
+          </a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="services.html#saas" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-cloud text-violet-400"></i> SaaS Development</a>
+            <a href="services.html#ai" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-robot text-fuchsia-400"></i> AI Development</a>
+            <a href="services.html#web" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-code text-cyan-400"></i> Web Applications</a>
+            <a href="services.html#mvp" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-rocket text-emerald-400"></i> MVP &amp; Prototyping</a>
+            <a href="services.html#devops" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-server text-amber-400"></i> DevOps &amp; Cloud</a>
+            <a href="services.html#consulting" class="nav-dropdown-item" role="menuitem"><i class="fa-solid fa-lightbulb text-rose-400"></i> Consulting</a>
+            <a href="services.html" class="nav-dropdown-item nav-dropdown-all" role="menuitem">View all services</a>
+          </div>
+        </div>
+        <a href="index.html#solutions" class="nav-link hover:text-violet-400">Solutions</a>
+        <a href="courses.html" class="nav-link hover:text-violet-400">Courses</a>
+        <a href="about.html" class="nav-link active hover:text-violet-400">About</a>
+        <a href="contact.html" class="nav-link hover:text-violet-400">Contact</a>
+      </div>
+      <a href="contact.html" class="hidden md:inline-block px-5 py-2 text-sm font-medium bg-violet-600 rounded-xl hover:bg-violet-500 transition">
+        Book a Consultation
+      </a>
+      <button id="menu-btn" type="button" class="md:hidden text-2xl text-zinc-300" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-800 bg-zinc-950 px-6 py-4 flex flex-col gap-4 text-sm">
+      <div>
+        <button type="button" id="mobile-services-btn" class="nav-link hover:text-violet-400 flex items-center gap-2 w-full text-left">
+          Services
+          <i class="fa-solid fa-chevron-down text-[10px] opacity-60"></i>
+        </button>
+        <div id="mobile-services-sub" class="nav-services-sub hidden">
+          <a href="services.html#saas" class="text-zinc-400 hover:text-violet-400">SaaS Development</a>
+          <a href="services.html#ai" class="text-zinc-400 hover:text-violet-400">AI Development</a>
+          <a href="services.html#web" class="text-zinc-400 hover:text-violet-400">Web Applications</a>
+          <a href="services.html#mvp" class="text-zinc-400 hover:text-violet-400">MVP &amp; Prototyping</a>
+          <a href="services.html#devops" class="text-zinc-400 hover:text-violet-400">DevOps &amp; Cloud</a>
+          <a href="services.html#consulting" class="text-zinc-400 hover:text-violet-400">Consulting</a>
+          <a href="services.html" class="text-violet-400">View all services</a>
+        </div>
+      </div>
+      <a href="index.html#solutions" class="nav-link hover:text-violet-400">Solutions</a>
+      <a href="courses.html" class="nav-link hover:text-violet-400">Courses</a>
+      <a href="about.html" class="nav-link active hover:text-violet-400">About</a>
+      <a href="contact.html" class="nav-link hover:text-violet-400">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-bg min-h-[85vh] flex items-center pt-24 pb-16">
+    <div class="max-w-[1280px] mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-medium tracking-[2px] text-violet-400 mb-6 reveal">
+        EST. 2023 • LAHORE &amp; FUJAIRAH
+      </div>
+      <h1 class="text-5xl md:text-[68px] font-bold tracking-[-3px] leading-[1.05] mb-6 reveal">
+        Business Enablement.<br>
+        <span class="text-violet-400">Technology Execution.</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto leading-tight reveal delay-1">
+        We are the single trusted partner that combines regulatory expertise, documentation mastery, and production-grade software to help businesses launch, operate, and scale with confidence.
+      </p>
+      <div class="mt-10 reveal delay-2">
+        <a href="contact.html" class="inline-flex items-center justify-center gap-3 px-9 py-4 bg-white text-black font-semibold rounded-2xl hover:bg-violet-400 hover:text-white transition-all text-lg">
+          Book a Consultation
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Stats -->
+  <div class="border-y border-zinc-800 py-8">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
+        <div class="reveal">
+          <div class="text-4xl font-bold text-violet-400 stat-number">150+</div>
+          <div class="text-sm text-zinc-400 mt-2">Projects Delivered</div>
+        </div>
+        <div class="reveal delay-1">
+          <div class="text-4xl font-bold text-violet-400 stat-number">1,200+</div>
+          <div class="text-sm text-zinc-400 mt-2">Documents Processed</div>
+        </div>
+        <div class="reveal delay-2">
+          <div class="text-4xl font-bold text-violet-400 stat-number">98%</div>
+          <div class="text-sm text-zinc-400 mt-2">Client Retention</div>
+        </div>
+        <div class="reveal delay-3">
+          <div class="text-4xl font-bold text-violet-400 stat-number">15+</div>
+          <div class="text-sm text-zinc-400 mt-2">Years Experience</div>
+        </div>
+        <div class="reveal delay-4">
+          <div class="text-4xl font-bold text-violet-400 stat-number">2</div>
+          <div class="text-sm text-zinc-400 mt-2">Countries</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Who We Are -->
+  <section class="section max-w-[1280px] mx-auto px-6 py-20">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="text-violet-400 text-xs tracking-[3px] font-medium mb-4 reveal">OUR STORY</div>
+      <h2 class="text-5xl md:text-[52px] font-bold tracking-[-1.5px] leading-none mb-8 reveal delay-1">We Remove Friction from Business Growth</h2>
+      <p class="text-lg text-zinc-300 leading-relaxed reveal delay-2">
+        Most organizations struggle with fragmented services — one provider for registration, another for documentation, and yet another for software.
+        Arman Computers was founded to change that. We deliver <strong>integrated business enablement and technology solutions</strong> under one roof.
+      </p>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section bg-zinc-900/50 border-t border-b border-zinc-800 py-20">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <div class="grid md:grid-cols-12 gap-12 items-center">
+        <div class="md:col-span-5">
+          <h2 class="text-4xl font-bold tracking-tight reveal">Why Founders &amp; Businesses Trust Arman</h2>
+        </div>
+        <div class="md:col-span-7 space-y-8">
+          <div class="premium-card flex gap-6 p-8 rounded-3xl reveal">
+            <i class="fa-solid fa-check-circle text-4xl text-violet-400 mt-1"></i>
+            <div>
+              <h3 class="font-semibold text-xl mb-2">End-to-End Execution</h3>
+              <p class="text-zinc-400">From company registration and FBR compliance to custom SaaS, AI tools, and digital infrastructure — we execute with precision.</p>
+            </div>
+          </div>
+          <div class="premium-card flex gap-6 p-8 rounded-3xl reveal delay-1">
+            <i class="fa-solid fa-globe text-4xl text-violet-400 mt-1"></i>
+            <div>
+              <h3 class="font-semibold text-xl mb-2">Built for Pakistan &amp; Overseas Pakistanis</h3>
+              <p class="text-zinc-400">Deep local regulatory knowledge combined with international attestation and diaspora expertise.</p>
+            </div>
+          </div>
+          <div class="premium-card flex gap-6 p-8 rounded-3xl reveal delay-2">
+            <i class="fa-solid fa-bolt text-4xl text-violet-400 mt-1"></i>
+            <div>
+              <h3 class="font-semibold text-xl mb-2">Senior Talent • Lean Delivery</h3>
+              <p class="text-zinc-400">No junior teams. No bureaucracy. Fast, high-quality delivery with full transparency.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Serve -->
+  <section class="section max-w-[1280px] mx-auto px-6 py-20">
+    <div class="text-center mb-12">
+      <div class="text-violet-400 text-xs tracking-[3px] font-medium reveal">WHO WE SERVE</div>
+      <h2 class="text-4xl font-bold tracking-tight mt-3 reveal delay-1">Every Stage of Business Growth</h2>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="premium-card p-8 rounded-3xl text-center reveal">Startups &amp; New Ventures</div>
+      <div class="premium-card p-8 rounded-3xl text-center reveal delay-1">Small &amp; Medium Enterprises</div>
+      <div class="premium-card p-8 rounded-3xl text-center reveal delay-2">Overseas Pakistanis</div>
+      <div class="premium-card p-8 rounded-3xl text-center reveal delay-3">Property Owners &amp; Investors</div>
+      <div class="premium-card p-8 rounded-3xl text-center reveal delay-4">Import / Export Businesses</div>
+      <div class="premium-card p-8 rounded-3xl text-center reveal">Educational &amp; Professional Applicants</div>
+    </div>
+  </section>
+
+  <!-- Service Pillars -->
+  <section class="section bg-zinc-900/50 py-20">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <h2 class="text-4xl font-bold tracking-tight text-center mb-12 reveal">Our Integrated Ecosystem</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="premium-card p-10 rounded-3xl text-center reveal">
+          <i class="fa-solid fa-building text-6xl mb-6 text-violet-400"></i>
+          <h3 class="text-2xl font-semibold mb-4">Business Formation &amp; Compliance</h3>
+          <p class="text-zinc-400">Company registration, licensing, taxation, FBR, SECP, and full regulatory navigation.</p>
+        </div>
+        <div class="premium-card p-10 rounded-3xl text-center reveal delay-1">
+          <i class="fa-solid fa-file-lines text-6xl mb-6 text-violet-400"></i>
+          <h3 class="text-2xl font-semibold mb-4">Documentation &amp; International Services</h3>
+          <p class="text-zinc-400">Attestation, verification, visa support, property paperwork, and diaspora services.</p>
+        </div>
+        <div class="premium-card p-10 rounded-3xl text-center reveal delay-2">
+          <i class="fa-solid fa-laptop-code text-6xl mb-6 text-violet-400"></i>
+          <h3 class="text-2xl font-semibold mb-4">Technology &amp; Digital Transformation</h3>
+          <p class="text-zinc-400">Custom software, SaaS platforms, AI solutions, mobile apps, cloud &amp; automation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="max-w-[1280px] mx-auto px-6 py-24 text-center border-t border-zinc-800">
+    <h2 class="text-5xl font-bold tracking-tight mb-6 reveal">Ready to Simplify Your Journey?</h2>
+    <p class="text-xl text-zinc-400 max-w-xl mx-auto mb-10 reveal delay-1">
+      Let’s talk about how we can support your business registration, documentation needs, or technology goals.
+    </p>
+    <div class="reveal delay-2">
+      <a href="contact.html" class="inline-flex items-center justify-center gap-3 px-10 py-4 bg-white text-black font-semibold rounded-2xl hover:bg-violet-400 hover:text-white transition-all text-lg">
+        Schedule Your Consultation
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer (unchanged) -->
+  <footer class="border-t border-zinc-800 pt-14 pb-10 text-sm">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-y-10">
+        <div class="col-span-2 md:col-span-1">
+          <a href="index.html" class="flex items-center gap-2 font-semibold text-lg">
+            <img src="assets/logo.svg" alt="" class="h-7 w-auto"> Arman Computers
+          </a>
+          <p class="mt-3 text-xs text-zinc-500">Business Enablement &amp; Technology Partner</p>
+        </div>
+        <div>
+          <div class="font-medium text-xs tracking-widest text-zinc-500 mb-3">COMPANY</div>
+          <div class="space-y-2 text-zinc-400">
+            <a href="about.html" class="block hover:text-white">About</a>
+            <a href="contact.html" class="block hover:text-white">Contact</a>
+          </div>
+        </div>
+        <div>
+          <div class="font-medium text-xs tracking-widest text-zinc-500 mb-3">SERVICES</div>
+          <div class="space-y-2 text-zinc-400">
+            <a href="services.html" class="block hover:text-white">All Services</a>
+          </div>
+        </div>
+        <div class="md:text-right col-span-2 md:col-span-1">
+          <div class="text-xs text-zinc-500">© 2026 Arman Computers</div>
+          <div class="mt-1 text-xs text-zinc-500">Lahore, Pakistan • Fujairah, UAE</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/923006991759?text=Hi%20Arman%20Computers%2C%20I%27d%20like%20to%20know%20more%20about%20your%20company." target="_blank" class="fixed bottom-6 right-6 z-[60] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl hover:scale-110 transition">
+    <i class="fa-brands fa-whatsapp text-3xl"></i>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
