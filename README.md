@@ -1,6 +1,6 @@
 # Arman Computers
 
-Landing page for Arman Computers — SaaS development, AI solutions, and custom software.
+Landing page for Arman Computers — integrated business enablement partner offering business formation, compliance, documentation, and technology services in Pakistan & UAE.
 
 ## Local preview
 
